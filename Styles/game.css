@@ -1,0 +1,22 @@
+.Game {
+    position: absolute;
+    background-color: rgb(255, 255, 255);
+    left: 10%;
+    top: calc(50vh - 20vw);
+    width: 80vw;
+    height: 40vw;
+    border-radius: 5px;
+}
+
+.game-canvas {
+    position: absolute;
+    left: 4px;
+    right: 4px;
+    top: 4px;
+    bottom: 4px;
+    width: calc(80vw - 8px);
+    height: calc(40vw - 8px);
+    background-color: #ff00dd;
+    image-rendering: pixelated;
+    border-radius: 5px;
+}
