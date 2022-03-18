@@ -22,14 +22,15 @@ class Person extends GameObject {
             this.updatePosition(state)
         } else {
             if (this.playerControlled && state.arrow && !state.map.paused) {
-                this.moved = true
+                this.updateCanvas = true
                 this.startBehavior(state, {
                     type: "walk",
                     direction: state.arrow
                 })
+                this.updateSprite()
             }
 
-            if (this.moved) {
+            if (this.updateCanvas) {
                 this.updateSprite()
             }
         }
@@ -56,7 +57,7 @@ class Person extends GameObject {
             }
 
             state.map.moveWall(this.position.x, this.position.y, this.position.facing)
-            this.remainingProgress = 1
+            this.remainingProgress = 8
             this.updateSprite()
         }
     }
@@ -74,6 +75,7 @@ class Person extends GameObject {
         }
         if (!state.arrow) {
             this.updateSprite()
+            this.updateCanvas = false
         }
     }
 
@@ -83,6 +85,7 @@ class Person extends GameObject {
             return
         } else {
             this.sprite.setAnimation(`idle-${this.position.facing}`)
+            this.updateCanvas = false
         }
     }
 }

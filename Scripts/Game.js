@@ -9,7 +9,16 @@ class Game {
 
         this.gameCanvas = document.createElement('canvas')
         this.gameCanvas.classList.add("game-canvas")
-        this.context = this.gameCanvas.getContext("2d")
+        this.gameCanvas.width = utils.asGrid(10)
+        this.gameCanvas.height = utils.asGrid(5)
+        this.context = this.gameCanvas.getContext("2d", { alpha: false })
+
+        this.barrierImage = new Image()
+        this.barrierImage.src = "/Assets/Tiles/barrier.png"
+        this.grassImage = new Image()
+        this.grassImage.src = "/Assets/Tiles/grass.png"
+        this.pathImage = new Image()
+        this.pathImage.src = "/Assets/Tiles/path.png"
 
         this.element.appendChild(this.gameCanvas)
         container.appendChild(this.element)
@@ -18,9 +27,6 @@ class Game {
     startGameLoop() {
         const step = () => {
             if (!this.map.paused) {
-                this.context.clearRect(0, 0, this.gameCanvas.width, this.gameCanvas.height)
-
-                const cameraFocus = this.map.gameObjects.player
 
                 Object.values(this.map.gameObjects).sort((a, b) => {
                     return a.y - b.y
@@ -31,20 +37,25 @@ class Game {
                     })
                 })
 
-                this.map.drawBackground(this.context, cameraFocus)
+                const cameraFocus = this.map.gameObjects.player
 
-                Object.values(this.map.gameObjects).forEach(object => {
-                    object.sprite.draw(this.context, cameraFocus)
-                })
+                if (cameraFocus.updateCanvas === undefined || cameraFocus.updateCanvas) {
+                    this.context.clearRect(0, 0, this.gameCanvas.width, this.gameCanvas.height)
 
-                this.map.drawForeground(this.context, cameraFocus)
+                    this.map.drawTiles(this.context, cameraFocus, "bottom", this.barrierImage, this.grassImage, this.pathImage)
+                    this.map.drawTiles(this.context, cameraFocus, "floor", this.barrierImage, this.grassImage, this.pathImage)
 
-                /* requestAnimationFrame(() => {
-                        step()
-                }) */
-                setTimeout(() => {
+                    Object.values(this.map.gameObjects).forEach(object => {
+                        object.sprite.draw(this.context, cameraFocus)
+                    })
+
+                    //this.map.drawTiles(this.context, cameraFocus, "top", this.barrierImage, this.grassImage, this.pathImage)
+                }
+
+                requestAnimationFrame(step)
+                /* setTimeout(() => {
                     step()
-                }, 1000 / 120)
+                }, 1000 / 120) */
             }
         }
         step()

@@ -32,7 +32,7 @@ class Sprite {
         }
         this.animation = config.animation || "idle-down"
         this.animationFrame = config.animationFrame || 0
-        this.animationFrameLimit = config.animationFrameLimit || 12
+        this.animationFrameLimit = config.animationFrameLimit || 6
         this.animationFrameProgress = this.animationFrameLimit
 
         this.gameObject = config.gameObject
@@ -64,11 +64,11 @@ class Sprite {
         }
     }
 
-    draw(context, cameraFocus) {
-        const x = this.gameObject.position.x - cameraFocus.position.x + utils.asGrid(9)
-        const y = this.gameObject.position.y - cameraFocus.position.y + utils.asGrid(4) - 5
+    draw(context, cameraFocus) { 
+        const x = this.gameObject.position.x - cameraFocus.position.x + utils.asGrid(5) + 0
+        const y = this.gameObject.position.y - cameraFocus.position.y + utils.asGrid(2) - 5
 
-        this.shadowLoaded && context.drawImage(this.shadow, x, y + 3)
+        this.shadowLoaded && context.drawImage(this.shadow, x, y + 6)
 
         const [frameX, frameY] = this.frame
 
@@ -80,8 +80,8 @@ class Sprite {
             36,
             x,
             y,
-            16,
-            18
+            32,
+            36
         )
         this.updateAnimationProgress()
     }

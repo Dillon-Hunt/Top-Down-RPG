@@ -5,44 +5,53 @@ class Map {
         this.actionSpaces = config.actionSpaces || [] // To Do
         this.walls = config.walls || {}
 
-        /* if (config.lowerSrc) {
-            this.lowerImage = new Image()
-            this.lowerImage.src = config.lowerSrc
-        }
-
-        if (config.upperSrc) {
-            this.upperImage = new Image()
-            this.upperImage.src = config.upperSrc
-        } */
+        this.upperImage = new Image()
+        this.upperImage.src = "/Assets/Scenes/DemoSceneOne.png"
 
         this.tiles = config.tiles
 
         this.paused = false
     }
 
-    drawBackground(context, cameraFocus) {
+    drawTiles(context, cameraFocus, layer, barrierImage, grassImage, pathImage) {
+        /* console.log(utils.asGrid(13) - cameraFocus.position.x, utils.asGrid(8) - cameraFocus.position.y)
+        context.drawImage(this.upperImage, utils.asGrid(13) - cameraFocus.position.x, utils.asGrid(8) - cameraFocus.position.y, 544 / 2, 320 / 2)
+        /*  */
+        
+        let viewWidth = utils.asGrid(5)
+        let viewHeight = utils.asGrid(2)
+
         Object.keys(this.tiles).forEach(key => {
-            if (this.tiles[key].layer = "bottom") {
-                let tileImage = new Image()
-                tileImage.src = this.tiles[key].src
+            if (this.tiles[key].layer === layer) {
                 let [ x, y ] = key.split("-")
-                x = parseInt(x)
-                y = parseInt(y)
-                context.drawImage(
-                    tileImage, 
-                    utils.asGrid(x) - cameraFocus.position.x + utils.asGrid(9), 
-                    utils.asGrid(y) - cameraFocus.position.y + utils.asGrid(4), 
-                    16,
-                    16
-                    )
+                x = utils.asGrid(parseInt(x))
+                y = utils.asGrid(parseInt(y))
+                // Visualised if (x < context.canvas.width + cameraFocus.position.x - viewWidth - 100 && x > cameraFocus.position.x - viewWidth + 100 && y < context.canvas.height + cameraFocus.position.y - 100 && y > cameraFocus.position.y - viewHeight + 10) {
+                if (x < context.canvas.width + cameraFocus.position.x - viewWidth  && x > cameraFocus.position.x - viewWidth - 32 && y < context.canvas.height + cameraFocus.position.y && y > cameraFocus.position.y - viewHeight - 32) {
+                    //let tileImage = new Image()
+                    //tileImage.src = this.tiles[key].src
+                    let tileImage = null
+                    switch (this.tiles[key].type) {
+                        case 'barrier':
+                            tileImage = barrierImage
+                            break
+                        case 'grass':
+                            tileImage = grassImage
+                            break
+                        case 'path':
+                            tileImage = pathImage
+                            break
+                    }
+                    context.drawImage(
+                        tileImage, 
+                        x - cameraFocus.position.x + viewWidth,
+                        y - cameraFocus.position.y + viewHeight, 
+                        32,
+                        32
+                        )
+                }
             }
         })
-    }
-
-    drawForeground(context, cameraFocus) {
-        if (this.upperImage) {
-            context.drawImage(this.upperImage, utils.asGrid(20) - cameraFocus.position.x, utils.asGrid(5) - cameraFocus.position.y, 272 * 2, 160 * 2)
-        }
     }
 
     spaceTaken(initialX, initialY, facing) {
@@ -95,56 +104,5 @@ class Map {
         this.removeWall(initialX, initialY)
         const {x, y} = utils.nextPosition(initialX, initialY, facing)
         this.addWall(x, y)
-    }
-}
-
-Window.maps = {
-    DemoSceneOne: {
-        id: "DemoSceneOne",
-        lowerSrc: "/Assets/Scenes/DemoSceneOne-large.png",
-        upperSrc: null,
-        gameObjects: {
-            player: new Person({
-                playerControlled: true,
-                position: {
-                    x: 1,
-                    y: 1,
-                    facing: "Down",
-                },
-                src: "/Assets/Sprites/player-large.png"
-            })
-        },
-        walls: {
-            topLimit: {
-                startX: -1, // Smaller
-                endX: 17,   // Larger
-                startY: -1, // Smaller
-                endY: 0     // Larger
-            },
-            bottomLimit: {
-                startX: 0,
-                endX: 16,
-                startY: 9,
-                endY: 10
-            },
-            leftLimit: {
-                startX: -1,
-                endX: 0,
-                startY: -1,
-                endY: 9
-            },
-            rightLimit: {
-                startX: 16,
-                endX: 17,
-                startY: 0,
-                endY: 9
-            },
-            block: {
-                startX: 5.5,
-                endX: 7.5,
-                startY: 4.5,
-                endY: 5.5
-            },
-        }
     }
 }
