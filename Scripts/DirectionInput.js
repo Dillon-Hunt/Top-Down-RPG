@@ -15,7 +15,7 @@ class DirectionInput {
     }
 
     get direction() {
-        // return this.heldDirections[0]
+        return this.heldDirections[0]/* 
         if (this.heldDirections[1] === undefined) {
             return this.heldDirections[0]
         } else {
@@ -37,7 +37,7 @@ class DirectionInput {
             if ((heldDirections.includes("up") && heldDirections.includes("down")) || (heldDirections.includes("left") && heldDirections.includes("right"))) {
                 return heldDirections[0]
             }
-        }
+        } */
     }
 
     init() {

@@ -20,3 +20,11 @@
     image-rendering: pixelated;
     border-radius: 5px;
 }
+
+.player-position {
+    position: absolute;
+    color: #fff;
+    z-index: 10;
+    left: 10vw;
+    top: 10vw;
+}

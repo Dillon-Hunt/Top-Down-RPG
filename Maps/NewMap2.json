@@ -10,7 +10,127 @@
                 "y": 160,
                 "facing": "down"
             },
-            "src": "/Assets/Sprites/player-large.png"
+            "src": "/Assets/Sprites/player.png"
+        },
+        "22-10-log": {
+            "id": "22-10-log",
+            "type": "log",
+            "directions": ["left", "right"],
+            "moveable": true,
+            "position": {
+                "x": 336,
+                "y": 176,
+                "facing": "down"
+            },
+            "src": "/Assets/Tiles/log-horizontal.png"
+        },
+        "19-10-log": {
+            "id": "19-10-log",
+            "type": "log",
+            "directions": ["left", "right"],
+            "moveable": true,
+            "position": {
+                "x": 320,
+                "y": 144,
+                "facing": "down"
+            },
+            "src": "/Assets/Tiles/log-horizontal.png"
+        },
+        "24-10-log": {
+            "id": "24-10-log",
+            "type": "log",
+            "directions": ["left", "right"],
+            "moveable": true,
+            "position": {
+                "x": 320,
+                "y": 208,
+                "facing": "down"
+            },
+            "src": "/Assets/Tiles/log-horizontal.png"
+        },
+        "25-10-log": {
+            "id": "25-10-log",
+            "type": "log",
+            "directions": ["left", "right"],
+            "moveable": true,
+            "position": {
+                "x": 336,
+                "y": 192,
+                "facing": "down"
+            },
+            "src": "/Assets/Tiles/log-horizontal.png"
+        },
+        "20-11-log": {
+            "id": "20-11-log",
+            "type": "log",
+            "directions": ["up", "down"],
+            "moveable": true,
+            "position": {
+                "x": 320,
+                "y": 176,
+                "facing": "down"
+            },
+            "src": "/Assets/Tiles/log-vertical.png"
+        },
+        "21-10-log": {
+            "id": "21-10-log",
+            "type": "log",
+            "directions": ["up", "down"],
+            "moveable": true,
+            "position": {
+                "x": 336,
+                "y": 160,
+                "facing": "down"
+            },
+            "src": "/Assets/Tiles/log-vertical.png"
+        },
+        "23-10-log": {
+            "id": "23-10-log",
+            "type": "log",
+            "directions": ["up", "down"],
+            "moveable": true,
+            "position": {
+                "x": 368,
+                "y": 176,
+                "facing": "down"
+            },
+            "src": "/Assets/Tiles/log-vertical.png"
+        },
+        "23-10-rock": {
+            "id": "23-10-rock",
+            "type": "rock",
+            "directions": ["up", "down", "left", "right"],
+            "moveable": true,
+            "position": {
+                "x": 352,
+                "y": 160,
+                "facing": "down"
+            },
+            "src": "/Assets/Tiles/rock.png"
+        },
+        "24-10-rock": {
+            "id": "24-10-rock",
+            "type": "rock",
+            "directions": null,
+            "moveable": false,
+            "position": {
+                "x": 336,
+                "y": 128,
+                "facing": "down"
+            },
+            "src": "/Assets/Tiles/large-rock.png"
+        },
+        "25-10-rock": {
+            "id": "25-10-rock",
+            "type": "rock",
+            "directions": null,
+            "moveable": false,
+            "position": {
+                "x": 352,
+                "y": 144,
+                "facing": "down"
+            },
+            "src": "/Assets/Tiles/stump.png"
         }
     },
     "tiles": {

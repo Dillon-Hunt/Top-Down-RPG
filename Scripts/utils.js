@@ -1,9 +1,9 @@
 const utils = {
     asGrid(value) {
-        return value * 32
+        return value * 16
     },
     asRegular(value) {
-        return value / 32
+        return value / 16
     },
     emitEvent(name, detail) {
         const event = new CustomEvent(name, {
@@ -15,14 +15,14 @@ const utils = {
         let x = initialX
         let y = initialY
         if (facing === "left") {
-            x -= 2 * 4
+            x -= 16
         } else if (facing === "right") {
-            x += 2 * 4
+            x += 16
         } else if (facing === "up") {
-            y -= 2 * 4
+            y -= 16
         } else if (facing === "down") {
-            y += 2 * 4
-        } else if (facing === "up-left") {
+            y += 16
+        } /* else if (facing === "up-left") {
             y -= 1 * 4
             x -= 1 * 4
         } else if (facing === "up-right") {
@@ -34,7 +34,7 @@ const utils = {
         } else if (facing === "down-right") {
             y += 1 * 4
             x += 1 * 4
-        }
+        } */
         return { x, y }
     },
 }

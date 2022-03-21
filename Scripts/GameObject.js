@@ -1,11 +1,13 @@
 class GameObject {
     constructor(config) {
         this.id = null
+        this.type = config.type
         this.isMounted = false
         this.position = config.position || { x: 0, y: 0, facing: "down" }
         this.sprite = new Sprite({
             gameObject: this,
-            src: config.src || "/Assets/Sprites/default.png"
+            src: config.src || "/Assets/Sprites/default.png",
+            type: this.type
         })
     }
 

@@ -12,6 +12,25 @@ class Sprite {
             this.shadowLoaded = true
         }
 
+        this.type = config.type
+
+        this.shadowOffset = 0
+
+        switch (this.type) {
+            case "character":
+                this.shadowOffset = 3
+                break
+            case "log":
+                this.shadowOffset = -2
+                break
+            case "rock":
+                    this.shadowOffset = 2
+                    break
+            default:
+                console.log("No Such Type")
+                break
+        }
+
         this.animations = config.animations || {
             "idle-down":  [ [2, 0] ],
             "idle-right": [ [4, 1] ],
@@ -68,20 +87,20 @@ class Sprite {
         const x = this.gameObject.position.x - cameraFocus.position.x + utils.asGrid(5) + 0
         const y = this.gameObject.position.y - cameraFocus.position.y + utils.asGrid(2) - 5
 
-        this.shadowLoaded && context.drawImage(this.shadow, x, y + 6)
+        this.shadowLoaded && context.drawImage(this.shadow, x, y + this.shadowOffset)
 
         const [frameX, frameY] = this.frame
 
         this.loaded && context.drawImage( // Scaled Down
             this.image, 
-            frameX * 32,
-            frameY * 36,
-            32,
-            36,
+            frameX * 16,
+            frameY * 18,
+            16,
+            18,
             x,
             y,
-            32,
-            36
+            16,
+            18
         )
         this.updateAnimationProgress()
     }

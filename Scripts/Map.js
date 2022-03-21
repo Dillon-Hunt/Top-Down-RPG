@@ -46,8 +46,8 @@ class Map {
                         tileImage, 
                         x - cameraFocus.position.x + viewWidth,
                         y - cameraFocus.position.y + viewHeight, 
-                        32,
-                        32
+                        16,
+                        16
                         )
                 }
             }
@@ -55,17 +55,53 @@ class Map {
     }
 
     spaceTaken(initialX, initialY, facing) {
-        let {x, y} = utils.nextPosition(initialX, initialY, facing)
+        let { x, y } = utils.nextPosition(initialX, initialY, facing)
 
-        let taken = false
+        let taken = "none"
 
         Object.keys(this.walls).forEach(key => {
             if (utils.asRegular(x) >= this.walls[key].startX && utils.asRegular(x) <= this.walls[key].endX) {
                 if (utils.asRegular(y) <= this.walls[key].startY && utils.asRegular(y) >= this.walls[key].endY) {
-                    taken = true
+                    taken = "wall"
                 }
             }
         })
+
+        Object.keys(this.gameObjects).forEach(key => {
+            if (x === this.gameObjects[key].position.x  && y === this.gameObjects[key].position.y) {
+                if (this.gameObjects[key].type === "log" || this.gameObjects[key].type === "rock") {
+                    if (this.gameObjects[key].moveable && this.gameObjects[key].directions.includes(facing)) {
+                        let logNext = utils.nextPosition(this.gameObjects[key].position.x, this.gameObjects[key].position.y, facing)
+
+                        Object.keys(this.gameObjects).forEach(key => {
+                            if (logNext.x === this.gameObjects[key].position.x  && logNext.y === this.gameObjects[key].position.y) {
+                                taken = "wall"
+                            }
+                        })
+
+                        Object.keys(this.walls).forEach(key => {
+                            if (utils.asRegular(logNext.x) >= this.walls[key].startX && utils.asRegular(logNext.x) <= this.walls[key].endX) {
+                                if (utils.asRegular(logNext.y) <= this.walls[key].startY && utils.asRegular(logNext.y) >= this.walls[key].endY) {
+                                    taken = "wall"
+                                }
+                            }
+                        })
+    
+                        if (taken != "wall") {
+                            taken = "log"
+                            this.gameObjects[key].beingMoved = true
+                        }
+                    } else {
+                        taken = "wall"
+                    }
+                }
+            } else {
+                if (this.gameObjects[key].type === "log") {
+                    this.gameObjects[key].beingMoved = false
+                }
+            }
+        })
+
         return taken
     }
 

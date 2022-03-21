@@ -12,6 +12,7 @@ class Game {
         this.gameCanvas.width = utils.asGrid(10)
         this.gameCanvas.height = utils.asGrid(5)
         this.context = this.gameCanvas.getContext("2d", { alpha: false })
+        this.context.imageSmoothingEnabled = false
 
         this.barrierImage = new Image()
         this.barrierImage.src = "/Assets/Tiles/barrier.png"
@@ -40,6 +41,9 @@ class Game {
                 const cameraFocus = this.map.gameObjects.player
 
                 if (cameraFocus.updateCanvas === undefined || cameraFocus.updateCanvas) {
+                    document.querySelector(".player-position").textContent = `x: ${cameraFocus.position.x}, y: ${cameraFocus.position.y}`
+                    this.wasMoving = true
+
                     this.context.clearRect(0, 0, this.gameCanvas.width, this.gameCanvas.height)
 
                     this.map.drawTiles(this.context, cameraFocus, "bottom", this.barrierImage, this.grassImage, this.pathImage)
@@ -84,12 +88,36 @@ class Game {
         }
 
         Object.values(configJSON.gameObjects).forEach(object => {
-            // If type === "Character" <-- add in other game objects
-            newConfig.gameObjects[object.id] = new Person({
-                playerControlled: object.playerControlled,
-                position: object.position,
-                src: object.src
-            })
+            switch (object.type) {
+                case "character":
+                    newConfig.gameObjects[object.id] = new Person({
+                        type: object.type,
+                        playerControlled: object.playerControlled,
+                        position: object.position,
+                        src: object.src
+                    })
+                    break
+                case "log":
+                    newConfig.gameObjects[object.id] = new Log({
+                        type: object.type,
+                        moveable: object.moveable,
+                        directions: object.directions,
+                        position: object.position,
+                        src: object.src
+                    })
+                    break
+                case "rock":
+                    newConfig.gameObjects[object.id] = new Log({
+                        type: object.type,
+                        moveable: object.moveable,
+                        directions: object.directions,
+                        position: object.position,
+                        src: object.src
+                    })
+                    break
+                default:
+                    console.log("GameObject Type Does Not Exist")
+            }
         })
 
         Object.keys(configJSON.tiles).forEach(key => {
