@@ -2,6 +2,10 @@ class DirectionInput {
     constructor() {
         this.heldDirections = []
 
+        this.keys = {
+            f: false
+        }
+
         this.map = {
             "ArrowUp": "up",
             "ArrowDown": "down",
@@ -40,18 +44,26 @@ class DirectionInput {
         } */
     }
 
+    get fKey() {
+        return this.keys.f
+    }
+
     init() {
         document.addEventListener("keydown", e => {
             const direction = this.map[e.code]
             if (direction && this.heldDirections.indexOf(direction) === -1) {
                 this.heldDirections.unshift(direction)
-            }
+            } else if (e.code === "KeyF") {
+                this.keys.f = true
+            }   
         })
         document.addEventListener("keyup", e => {
             const direction = this.map[e.code]
             const index = this.heldDirections.indexOf(direction)
             if (index > -1) {
                 this.heldDirections.splice(index, 1)
+            } else if (e.code === "KeyF") {
+                this.keys.f = false
             }
         })
     }

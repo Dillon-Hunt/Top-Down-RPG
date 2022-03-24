@@ -29,6 +29,8 @@ class Game {
         const step = () => {
             if (!this.map.paused) {
 
+                this.map.fKey = this.directionInput.fKey
+
                 Object.values(this.map.gameObjects).sort((a, b) => {
                     return a.y - b.y
                 }).forEach(object => {
@@ -50,17 +52,19 @@ class Game {
                     this.map.drawTiles(this.context, cameraFocus, "floor", this.barrierImage, this.grassImage, this.pathImage)
 
                     Object.values(this.map.gameObjects).forEach(object => {
-                        object.sprite.draw(this.context, cameraFocus)
+                        object.type != "player" && object.sprite.draw(this.context, cameraFocus)
                     })
+
+                    this.map.gameObjects["player"].sprite.draw(this.context, cameraFocus)
 
                     //this.map.drawTiles(this.context, cameraFocus, "top", this.barrierImage, this.grassImage, this.pathImage)
                 }
-
-                requestAnimationFrame(step)
                 /* setTimeout(() => {
                     step()
                 }, 1000 / 120) */
             }
+
+            requestAnimationFrame(step)
         }
         step()
     }
@@ -89,27 +93,37 @@ class Game {
 
         Object.values(configJSON.gameObjects).forEach(object => {
             switch (object.type) {
+                case "player":
+                    newConfig.gameObjects[object.id] = new Player({
+                        type: object.type,
+                        playerControlled: object.playerControlled,
+                        position: object.position,
+                        src: object.src,
+                    })
+                    break
                 case "character":
                     newConfig.gameObjects[object.id] = new Person({
                         type: object.type,
                         playerControlled: object.playerControlled,
                         position: object.position,
-                        src: object.src
+                        src: object.src,
                     })
                     break
                 case "log":
                     newConfig.gameObjects[object.id] = new Log({
                         type: object.type,
                         moveable: object.moveable,
+                        breakable: object.breakable,
                         directions: object.directions,
                         position: object.position,
                         src: object.src
                     })
                     break
                 case "rock":
-                    newConfig.gameObjects[object.id] = new Log({
+                    newConfig.gameObjects[object.id] = new Rock({
                         type: object.type,
                         moveable: object.moveable,
+                        breakable: object.breakable,
                         directions: object.directions,
                         position: object.position,
                         src: object.src
@@ -118,6 +132,39 @@ class Game {
                 default:
                     console.log("GameObject Type Does Not Exist")
             }
+        })
+
+        // Testing
+        newConfig.gameObjects["test-axe"] = new Item({
+            type: "item",
+            data: {
+                name: "axe",
+                canBreak: ["log"],
+                level: "1",
+                durability: 5
+            },
+            position: {
+                x: 48,
+                y: 64,
+                direction: "down"
+            },
+            src: "/Assets/Items/Axe.png"
+        })
+
+        newConfig.gameObjects["test-pickaxe"] = new Item({
+            type: "item",
+            data: {
+                name: "pickaxe",
+                canBreak: ["rock"],
+                level: "1",
+                durability: 5
+            },
+            position: {
+                x: 64,
+                y: 64,
+                direction: "down"
+            },
+            src: "/Assets/Items/Pickaxe.png"
         })
 
         Object.keys(configJSON.tiles).forEach(key => {

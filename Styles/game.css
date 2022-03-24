@@ -26,5 +26,5 @@
     color: #fff;
     z-index: 10;
     left: 10vw;
-    top: 10vw;
+    top: calc(50vh - 20vw - 8px - 50px);
 }

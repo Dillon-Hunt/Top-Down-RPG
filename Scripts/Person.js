@@ -3,16 +3,21 @@ class Person extends GameObject {
         super(config)
         this.remainingProgress = 0
         this.remainingDelay = 0
+        this.slashDelay = 0
         this.standing = false
-        this.playerControlled = config.playerControlled || false
+        this.map = config.map
+
+        if (this.playerControlled) {
+            this.inventory = []
+        }
 
         this.directionUpdate = {
             "up": [["x", 0], ["y", -1]],
-            "down": [["x", 0], ["y", 1]],/* 
+            "down": [["x", 0], ["y", 1]],
             "up-left": [["x", -.7], ["y", -.7]],
             "up-right": [["x", .7], ["y", -.7]],
             "down-left": [["x", -.7], ["y", .7]],
-            "down-right": [["x", .7], ["y", .7]], */
+            "down-right": [["x", .7], ["y", .7]],
             "left": [["x", -1], ["y", 0]],
             "right": [["x", 1], ["y", 0]]
         }
@@ -21,24 +26,8 @@ class Person extends GameObject {
     update(state) {
         if (this.remainingProgress > 0 || this.remainingDelay > 0) {
             this.updatePosition(state)
-        } else {
-            if (this.playerControlled && state.arrow && !state.map.paused) {
-                this.updateCanvas = true
-                this.startBehavior(state, {
-                    type: "walk",
-                    direction: state.arrow
-                })
-                this.updateSprite()
-            } else {
-                this.updateCanvas = true
-            }
-
-            if (this.updateCanvas) {
-                this.updateSprite()
-            }
         }
     }
-
 
     startBehavior(state, behavior) {
         if (state.map.paused) {
@@ -51,13 +40,9 @@ class Person extends GameObject {
         this.position.facing = behavior.direction
 
         if (behavior.type === "walk") {
-            let taken = state.map.spaceTaken(this.position.x, this.position.y, this.position.facing)
+            let taken = state.map.spaceTaken(this.position.x, this.position.y, this.position.facing, false)
 
             if (taken === "wall") {
-                if (this.playerControlled) {
-                    this.updateSprite()
-                    return
-                }
                 setTimeout(() => {
                     this.startBehavior(state, behavior)
                 }, 10)
@@ -68,8 +53,9 @@ class Person extends GameObject {
             this.remainingProgress = 16
 
             if (taken === "log") {
-                this.remainingDelay = 3
+                this.remainingDelay = 5
             }
+
             this.updateSprite()
         }
     }
@@ -84,6 +70,7 @@ class Person extends GameObject {
             }
             return
         }
+
         const [[xProperty, xChange], [yProperty, yChange]] = this.directionUpdate[this.position.facing]
         this.position[xProperty] += xChange
         this.position[yProperty] += yChange
@@ -91,9 +78,10 @@ class Person extends GameObject {
     }
 
     updateSprite() {
-        if (this.remainingProgress > 0) {
+        if (this.slashDelay > 0) {
+            this.sprite.setAnimation(`slash-${this.position.facing}`) // Change
+        } else if (this.remainingProgress > 0) {
             this.sprite.setAnimation(`walk-${this.position.facing}`)
-            return
         } else {
             this.sprite.setAnimation(`idle-${this.position.facing}`)
             this.updateCanvas = true

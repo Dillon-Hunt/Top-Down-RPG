@@ -22,7 +22,7 @@ const utils = {
             y -= 16
         } else if (facing === "down") {
             y += 16
-        } /* else if (facing === "up-left") {
+        }/*  else if (facing === "up-left") {
             y -= 1 * 4
             x -= 1 * 4
         } else if (facing === "up-right") {

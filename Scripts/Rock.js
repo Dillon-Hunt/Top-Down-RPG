@@ -1,4 +1,4 @@
-class Log extends GameObject {
+class Rock extends GameObject {
     constructor(config) {
         super(config)
         this.remainingProgress = 0
