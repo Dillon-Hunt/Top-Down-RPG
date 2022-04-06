@@ -204,8 +204,6 @@ class Game {
             this.map.gameObjects.player.position = { x: initialPlayerState.x, y: initialPlayerState.y, facing: initialPlayerState.facing }
         }
 
-        console.log(this.map.gameObjects)
-
         this.saveState.playerPosition = this.map.gameObjects.player.position
     }
 

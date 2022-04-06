@@ -34,14 +34,11 @@ class Player extends GameObject {
                 direction: state.arrow
             })
             this.updatePosition(state)
-            this.updateSprite()
+            this.updateSprite(true)
 
         } else {
-            this.updateCanvas = true
-        }
-
-        if (this.updateCanvas) {
-            this.updateSprite()
+            this.updateCanvas = false
+            this.updateSprite(false)
         }
     }
 
@@ -63,6 +60,7 @@ class Player extends GameObject {
 
     updatePosition(state) {
         const [[xProperty, xChange], [yProperty, yChange]] = this.directionUpdate[this.position.facing]
+
         const nextX = Math.floor((this.position[xProperty] + xChange * state.delta) * 100) / 100
         const nextY = Math.floor((this.position[yProperty] + yChange * state.delta) * 100) / 100
         
@@ -72,10 +70,34 @@ class Player extends GameObject {
             this.position[xProperty] = nextX
             this.position[yProperty] = nextY
         }
+
+        if (spaceTaken.blocked && xChange != 0) {
+            const nextY = this.position[yProperty]
+            spaceTaken = state.map.spaceTaken(nextX, nextY, this.position.facing, true)
+            
+            if (!spaceTaken.blocked) { 
+                this.position.facing = xChange > 0 ? "right" : "left"
+                this.position[xProperty] = nextX
+            }
+        }
+
+        if (spaceTaken.blocked && yChange != 0) {
+            const nextX = this.position[xProperty]
+            const nextY = Math.floor((this.position[yProperty] + yChange * state.delta) * 100) / 100
+
+            spaceTaken = state.map.spaceTaken(nextX, nextY, this.position.facing, true)
+
+            if (!spaceTaken.blocked) { 
+                this.position.facing = yChange > 0 ? "down" : "up"
+                this.position[yProperty] = nextY
+            }
+        }
+
+        
     }
 
-    updateSprite() {
-        if (this.remainingProgress > 0) {
+    updateSprite(walking) {
+        if (walking) {
             this.sprite.setAnimation(`walk-${this.position.facing}`)
         } else {
             this.sprite.setAnimation(`idle-${this.position.facing}`)

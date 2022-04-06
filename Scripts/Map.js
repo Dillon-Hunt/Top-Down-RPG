@@ -69,9 +69,17 @@ class Map {
         }) */
     }
 
+    rectIntersect(x1, y1, w1, h1, x2, y2, w2, h2) {
+        // x, y, width, height, x2, y2, width2, height2
+        if (x2 > w1 + x1 || x1 > w2 + x2 || y2 > h1 + y1 || y1 > h2 + y2){
+            return false;
+        }
+        return true;
+    }
+
     spaceTaken(nextX, nextY, facing, player) {
 
-        let boxCollider = [7, 0]
+        let boxCollider = [12, 10]
 
         let spaceTaken = {
             blocked: false,
@@ -85,37 +93,14 @@ class Map {
         Object.values(this.gameObjects).forEach(object => {
             switch (object.type) {
                 case "wall":
-                    let objectX1 = Math.floor((object.position.x + 0))
-                    let objectY1 = Math.floor((object.position.y + 0))
-                    let objectX2 = Math.floor((object.position.x + 24))
-                    let objectY2 = Math.floor((object.position.y + 24));
+                    let objectX = Math.floor(object.position.x)
+                    let objectY = Math.floor(object.position.y)
 
-                    let collideX = false
-                    let collideY = false
-
-                    if (facing.includes("left")) {
-                        (x + boxCollider[0] >= objectX1 && x + boxCollider[0] <= objectX2) && (collideX = true)
-                    } else if (facing.includes("right")) {
-                        (x - boxCollider[0] >= objectX1 && x - boxCollider[0] <= objectX2) && (collideX = true)
-                    } else {
-                        (x >= objectX1 && x <= objectX2) && (collideX = true)
-                    }
-
-                    if (facing.includes("up")) {
-                        (y + boxCollider[1] >= objectY1 && y + boxCollider[1] <= objectY2) && (collideY = true)
-                    } else if (facing.includes("down")) {
-                        (y - boxCollider[1] >= objectY1 && y - boxCollider[1] <= objectY2) && (collideY = true)
-                    } else {
-                        (y >= objectY1 && y <= objectY2) && (collideY = true)
-                    }
-                    
-
-                    if (collideX && collideY) {
-                        console.log("Hit")
-                        /* spaceTaken = {
+                    if (this.rectIntersect(x + boxCollider[0] / 2, y + boxCollider[1] / 2, 24 - boxCollider[0], 24 - boxCollider[1], objectX, objectY, 24, 24)) {
+                        spaceTaken = {
                             blocked: true,
                             object: object
-                        } */
+                        }
                     }
                     break
                 default:
