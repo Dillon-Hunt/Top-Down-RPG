@@ -1,44 +1,47 @@
 class Player extends GameObject {
     constructor(config) {
         super(config)
-        this.remainingProgress = 0
-        this.preDelay = 0
-        this.postDelay = 0
         this.standing = false
         this.map = config.map
+        this.actualPosition = {
+            x: this.position.x,
+            y: this.position.y
+        }
 
         this.inventory = []
 
         this.directionUpdate = {
             "up": [["x", 0], ["y", -1]],
             "down": [["x", 0], ["y", 1]],
+            "up-left": [["x", -1], ["y", -1]],
+            "up-right": [["x", 1], ["y", -1]],
+            "down-left": [["x", -1], ["y", 1]],
+            "down-right": [["x", 1], ["y", 1]],
             "left": [["x", -1], ["y", 0]],
             "right": [["x", 1], ["y", 0]]
         }
     }
-
+    
     update(state) {
         if (this.inventory.length != 0) {
             //console.log(this.inventory)
         }
 
-        if (this.remainingProgress > 0 || this.preDelay > 0 || this.postDelay > 0) {
+        if (state.arrow && !state.map.paused) {
+            this.updateCanvas = true
+            this.startBehavior(state, {
+                type: "walk",
+                direction: state.arrow
+            })
             this.updatePosition(state)
-        } else {
-            if (state.arrow && !state.map.paused) {
-                this.updateCanvas = true
-                this.startBehavior(state, {
-                    type: "walk",
-                    direction: state.arrow
-                })
-                this.updateSprite()
-            } else {
-                this.updateCanvas = true
-            }
+            this.updateSprite()
 
-            if (this.updateCanvas) {
-                this.updateSprite()
-            }
+        } else {
+            this.updateCanvas = true
+        }
+
+        if (this.updateCanvas) {
+            this.updateSprite()
         }
     }
 
@@ -54,51 +57,20 @@ class Player extends GameObject {
         this.position.facing = behavior.direction
 
         if (behavior.type === "walk") {
-            let taken = state.map.spaceTaken(this.position.x, this.position.y, this.position.facing, true)
-            
-            if (taken === "wall") {
-                this.updateSprite()
-                return
-            }
-
-            state.map.moveWall(this.position.x, this.position.y, this.position.facing)
-
-            this.remainingProgress = 16
-
-            if (taken === "moveable") {
-                this.preDelay = 3
-                this.postDelay = this.preDelay
-            }
-
-            if (taken === "broken") {
-                this.postDelay = 10
-            }
-
-            this.updateSprite()
+            // Walking
         }
     }
 
     updatePosition(state) {
+        const [[xProperty, xChange], [yProperty, yChange]] = this.directionUpdate[this.position.facing]
+        const nextX = Math.floor((this.position[xProperty] + xChange * state.delta) * 100) / 100
+        const nextY = Math.floor((this.position[yProperty] + yChange * state.delta) * 100) / 100
+        
+        let spaceTaken = state.map.spaceTaken(nextX, nextY, this.position.facing, true)
 
-        if (this.preDelay <= 0 && this.remainingProgress != 0) {
-            const [[xProperty, xChange], [yProperty, yChange]] = this.directionUpdate[this.position.facing]
-            this.position[xProperty] += xChange
-            this.position[yProperty] += yChange
-            this.remainingProgress -= 1
-        } else {
-            this.preDelay--
-        }
-
-
-        if (this.remainingProgress === 0) {
-            if (this.postDelay === 0) {
-                utils.emitEvent("WalkingComplete", {
-                    id: this.id
-                })
-            } else {
-                this.postDelay--
-            }
-            return
+        if (!spaceTaken.blocked) {
+            this.position[xProperty] = nextX
+            this.position[yProperty] = nextY
         }
     }
 

@@ -66,7 +66,7 @@ class Log extends GameObject {
 
         if (behavior.type === "pushed") {
             state.map.moveWall(this.position.x, this.position.y, this.position.facing)
-            this.remainingProgress = 16
+            this.remainingProgress = 24
             this.remainingDelay = 3
             this.updateSprite()
         }

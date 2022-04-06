@@ -1,7 +1,7 @@
 class SaveState {
     constructor(config) {
         this.map = {
-            id: "NewMap2"
+            id: "NewMap"
         }
         this.player = {
             position: {

@@ -1,6 +1,11 @@
 class Game { 
     constructor(config) {
         this.map = null
+
+        this.delta = 0;
+        this.getTime = typeof performance === 'function' ? performance.now : Date.now;
+        this.lastUpdate = this.getTime();
+        this.FRAME_DURATION = 1000 / 60;
     }
 
     createGameElements(container) {
@@ -14,12 +19,8 @@ class Game {
         this.context = this.gameCanvas.getContext("2d", { alpha: false })
         this.context.imageSmoothingEnabled = false
 
-        this.barrierImage = new Image()
-        this.barrierImage.src = "/Assets/Tiles/barrier.png"
-        this.grassImage = new Image()
-        this.grassImage.src = "/Assets/Tiles/grass.png"
-        this.pathImage = new Image()
-        this.pathImage.src = "/Assets/Tiles/path.png"
+        this.tilesetImage = new Image()
+        this.tilesetImage.src = "/Assets/Tiles/tileset.png"
 
         this.element.appendChild(this.gameCanvas)
         container.appendChild(this.element)
@@ -27,6 +28,11 @@ class Game {
 
     startGameLoop() {
         const step = () => {
+
+            const now = this.getTime();
+            this.delta = (now - this.lastUpdate) / this.FRAME_DURATION;
+            this.lastUpdate = now;
+
             if (!this.map.paused) {
 
                 this.map.fKey = this.directionInput.fKey
@@ -35,6 +41,7 @@ class Game {
                     return a.y - b.y
                 }).forEach(object => {
                     object.update({
+                        delta: this.delta,
                         arrow: this.directionInput.direction,
                         map: this.map
                     })
@@ -48,8 +55,8 @@ class Game {
 
                     this.context.clearRect(0, 0, this.gameCanvas.width, this.gameCanvas.height)
 
-                    this.map.drawTiles(this.context, cameraFocus, "bottom", this.barrierImage, this.grassImage, this.pathImage)
-                    this.map.drawTiles(this.context, cameraFocus, "floor", this.barrierImage, this.grassImage, this.pathImage)
+                    this.map.drawTiles(this.context, cameraFocus, "bottom", this.tilesetImage)
+                    this.map.drawTiles(this.context, cameraFocus, "floor", this.tilesetImage)
 
                     Object.values(this.map.gameObjects).forEach(object => {
                         object.type != "player" && object.sprite.draw(this.context, cameraFocus)
@@ -91,18 +98,20 @@ class Game {
             }
         }
 
-        Object.values(configJSON.gameObjects).forEach(object => {
-            switch (object.type) {
+        Object.keys(configJSON.gameObjects).forEach(object => {
+            switch (configJSON.gameObjects[object].type) {
                 case "player":
-                    newConfig.gameObjects[object.id] = new Player({
-                        type: object.type,
-                        playerControlled: object.playerControlled,
-                        position: object.position,
-                        src: object.src,
+                    newConfig.gameObjects[object] = new Player({
+                        name: configJSON.gameObjects[object].name,
+                        type: configJSON.gameObjects[object].type,
+                        playerControlled: configJSON.gameObjects[object].playerControlled,
+                        position: configJSON.gameObjects[object].position,
+                        src: configJSON.gameObjects[object].src,
                     })
                     break
                 case "character":
-                    newConfig.gameObjects[object.id] = new Person({
+                    newConfig.gameObjects[object] = new Person({
+                        name: object.name,
                         type: object.type,
                         playerControlled: object.playerControlled,
                         position: object.position,
@@ -110,32 +119,45 @@ class Game {
                     })
                     break
                 case "log":
-                    newConfig.gameObjects[object.id] = new Log({
-                        type: object.type,
-                        moveable: object.moveable,
-                        breakable: object.breakable,
-                        directions: object.directions,
-                        position: object.position,
-                        src: object.src
+                    newConfig.gameObjects[object] = new Log({
+                        name: configJSON.gameObjects[object].name,
+                        type: configJSON.gameObjects[object].type,
+                        moveable: configJSON.gameObjects[object].moveable,
+                        breakable: configJSON.gameObjects[object].breakable,
+                        directions: configJSON.gameObjects[object].directions,
+                        position: configJSON.gameObjects[object].position,
+                        src: configJSON.gameObjects[object].src
                     })
                     break
                 case "rock":
-                    newConfig.gameObjects[object.id] = new Rock({
-                        type: object.type,
-                        moveable: object.moveable,
-                        breakable: object.breakable,
-                        directions: object.directions,
-                        position: object.position,
-                        src: object.src
+                    newConfig.gameObjects[object] = new Rock({
+                        name: configJSON.gameObjects[object].name,
+                        type: configJSON.gameObjects[object].type,
+                        moveable: configJSON.gameObjects[object].moveable,
+                        breakable: configJSON.gameObjects[object].breakable,
+                        directions: configJSON.gameObjects[object].directions,
+                        position: configJSON.gameObjects[object].position,
+                        src: configJSON.gameObjects[object].src
+                    })
+                    break
+                case "wall":
+                    newConfig.gameObjects[object] = new Wall({
+                        name: configJSON.gameObjects[object].name,
+                        type: configJSON.gameObjects[object].type,
+                        position: {
+                            x: configJSON.gameObjects[object].position.x * 24,
+                            y: configJSON.gameObjects[object].position.y * 24
+                        },
+                        src: "./Assets/Tiles/" + configJSON.gameObjects[object].name + ".png"
                     })
                     break
                 default:
-                    console.log("GameObject Type Does Not Exist")
+                    console.log("GameObject Type '" + object.type + "' Does Not Exist")
             }
         })
 
         // Testing
-        newConfig.gameObjects["test-axe"] = new Item({
+        /* newConfig.gameObjects["test-axe"] = new Item({
             type: "item",
             data: {
                 name: "axe",
@@ -165,7 +187,7 @@ class Game {
                 direction: "down"
             },
             src: "/Assets/Items/Pickaxe.png"
-        })
+        }) */
 
         Object.keys(configJSON.tiles).forEach(key => {
             newConfig.tiles[key] = configJSON.tiles[key]
@@ -173,7 +195,7 @@ class Game {
 
         this.map = new Map(newConfig)
         this.map.world = this
-        this.map.setWalls()
+        /* this.map.setWalls() */
         this.map.mountObjects()
 
         this.saveState.map.id = newConfig.id
@@ -181,6 +203,8 @@ class Game {
         if (initialPlayerState) {
             this.map.gameObjects.player.position = { x: initialPlayerState.x, y: initialPlayerState.y, facing: initialPlayerState.facing }
         }
+
+        console.log(this.map.gameObjects)
 
         this.saveState.playerPosition = this.map.gameObjects.player.position
     }

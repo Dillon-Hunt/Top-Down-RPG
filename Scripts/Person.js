@@ -14,10 +14,10 @@ class Person extends GameObject {
         this.directionUpdate = {
             "up": [["x", 0], ["y", -1]],
             "down": [["x", 0], ["y", 1]],
-            "up-left": [["x", -.7], ["y", -.7]],
-            "up-right": [["x", .7], ["y", -.7]],
-            "down-left": [["x", -.7], ["y", .7]],
-            "down-right": [["x", .7], ["y", .7]],
+            "up-left": [["x", -.71], ["y", -.71]],
+            "up-right": [["x", .7], ["y", -.71]],
+            "down-left": [["x", -.71], ["y", .71]],
+            "down-right": [["x", .71], ["y", .71]],
             "left": [["x", -1], ["y", 0]],
             "right": [["x", 1], ["y", 0]]
         }
@@ -50,7 +50,7 @@ class Person extends GameObject {
             }
 
             state.map.moveWall(this.position.x, this.position.y, this.position.facing)
-            this.remainingProgress = 16
+            this.remainingProgress = 24
 
             if (taken === "log") {
                 this.remainingDelay = 5

@@ -15,7 +15,7 @@ class Sprite {
         switch (this.type) {
             case "player":
                 this.spriteOffset = -5
-                this.shadowOffset = 3
+                this.shadowOffset = 11
                 break
             case "character":
                 this.spriteOffset = -5
@@ -33,8 +33,12 @@ class Sprite {
                 this.spriteOffset = 0
                 this.hasShadow = false
                 break
+            case "wall":
+                this.spriteOffset = 0
+                this.hasShadow = false
+                break
             default:
-                console.log("No Such Type")
+                console.log("No Such Type '" + this.type + "'")
                 break
         }
 
@@ -49,15 +53,23 @@ class Sprite {
         this.animations = config.animations || {
             "idle-down":  [ [2, 0] ],
             "idle-right": [ [4, 1] ],
+            "idle-down-right": [ [4, 1] ],
+            "idle-up-right": [ [4, 1] ],
             "idle-up":    [ [2, 2] ],
             "idle-left":  [ [1, 3] ],
+            "idle-down-left": [ [4, 1] ],
+            "idle-up-left": [ [4, 1] ],
             "walk-down":  [ [1, 0], [2, 0], [3, 0], [4, 0], [5, 0], [0, 0] ],
             "slash-down":  [ [1, 4], [2, 4], [3, 4], [4, 4], [5, 4], [0, 4] ],
             "walk-right": [ [1, 1], [2, 1], [3, 1], [4, 1], [5, 1], [0, 1] ],
+            "walk-down-right": [ [1, 1], [2, 1], [3, 1], [4, 1], [5, 1], [0, 1] ],
+            "walk-up-right": [ [1, 1], [2, 1], [3, 1], [4, 1], [5, 1], [0, 1] ],
             "slash-right":  [ [1, 5], [2, 5], [3, 5], [4, 5], [5, 5], [0, 5] ],
             "walk-up":    [ [1, 2], [2, 2], [3, 2], [4, 2], [5, 2], [0, 2] ],
             "slash-up":  [ [1, 6], [2, 6], [3, 6], [4, 6], [5, 6], [0, 6] ],
             "walk-left":  [ [1, 3], [2, 3], [3, 3], [4, 3], [5, 3], [0, 3] ],
+            "walk-down-left":  [ [1, 3], [2, 3], [3, 3], [4, 3], [5, 3], [0, 3] ],
+            "walk-up-left":  [ [1, 3], [2, 3], [3, 3], [4, 3], [5, 3], [0, 3] ],
             "slash-left":  [ [1, 7], [2, 57], [3, 7], [4, 7], [5, 7], [0, 7] ],
         }
         this.animation = config.animation || "idle-down"
@@ -96,22 +108,22 @@ class Sprite {
 
     draw(context, cameraFocus) { 
         const x = this.gameObject.position.x - cameraFocus.position.x + utils.asGrid(5)
-        const y = this.gameObject.position.y - cameraFocus.position.y + utils.asGrid(2) + this.spriteOffset
+        const y = this.gameObject.position.y +- cameraFocus.position.y + utils.asGrid(2) + this.spriteOffset
 
-        this.hasShadow && this.shadowLoaded && context.drawImage(this.shadow, x, y + this.shadowOffset)
+        this.hasShadow && this.shadowLoaded && context.drawImage(this.shadow, x + 4, y + this.shadowOffset)
 
         const [frameX, frameY] = this.frame
 
         this.loaded && context.drawImage( // Scaled Down
             this.image, 
-            frameX * 16,
-            frameY * 18,
-            16,
-            18,
+            frameX * 24,
+            frameY * 24,
+            24,
+            24,
             x,
             y,
-            16,
-            18
+            24,
+            24
         )
         this.updateAnimationProgress()
     }

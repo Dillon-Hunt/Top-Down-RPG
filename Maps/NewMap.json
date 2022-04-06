@@ -1,1418 +1,1560 @@
 {
-    "id": "NewMap",
-    "gameObjects": {
-        "player": {
-            "id": "player",
-            "type": "character",
-            "playerControlled": true,
-            "position": {
-                "x": 272,
-                "y": 96,
-                "facing": "down"
-            },
-            "src": "/Assets/Sprites/player-large.png"
-        }
+  "id": "NewMap",
+  "gameObjects": {
+    "player": {
+      "name": "player",
+      "type": "player",
+      "position": { "x": 24, "y": 24, "facing": "down" },
+      "src": "/Assets/Sprites/player.png"
     },
-    "tiles": {
-        "0-0-top": {
-            "src": "/Assets/Tiles/barrier.png",
-            "type": "barrier",
-            "layer": "top"
-        },
-        "1-0-top": {
-            "src": "/Assets/Tiles/barrier.png",
-            "type": "barrier",
-            "layer": "top"
-        },
-        "2-0-top": {
-            "src": "/Assets/Tiles/barrier.png",
-            "type": "barrier",
-            "layer": "top"
-        },
-        "3-0-top": {
-            "src": "/Assets/Tiles/barrier.png",
-            "type": "barrier",
-            "layer": "top"
-        },
-        "4-0-top": {
-            "src": "/Assets/Tiles/barrier.png",
-            "type": "barrier",
-            "layer": "top"
-        },
-        "5-0-top": {
-            "src": "/Assets/Tiles/barrier.png",
-            "type": "barrier",
-            "layer": "top"
-        },
-        "6-0-top": {
-            "src": "/Assets/Tiles/barrier.png",
-            "type": "barrier",
-            "layer": "top"
-        },
-        "7-0-top": {
-            "src": "/Assets/Tiles/barrier.png",
-            "type": "barrier",
-            "layer": "top"
-        },
-        "8-0-top": {
-            "src": "/Assets/Tiles/barrier.png",
-            "type": "barrier",
-            "layer": "top"
-        },
-        "9-0-top": {
-            "src": "/Assets/Tiles/barrier.png",
-            "type": "barrier",
-            "layer": "top"
-        },
-        "10-0-top": {
-            "src": "/Assets/Tiles/barrier.png",
-            "type": "barrier",
-            "layer": "top"
-        },
-        "11-0-top": {
-            "src": "/Assets/Tiles/barrier.png",
-            "type": "barrier",
-            "layer": "top"
-        },
-        "12-0-top": {
-            "src": "/Assets/Tiles/barrier.png",
-            "type": "barrier",
-            "layer": "top"
-        },
-        "13-0-top": {
-            "src": "/Assets/Tiles/barrier.png",
-            "type": "barrier",
-            "layer": "top"
-        },
-        "14-0-top": {
-            "src": "/Assets/Tiles/barrier.png",
-            "type": "barrier",
-            "layer": "top"
-        },
-        "15-0-top": {
-            "src": "/Assets/Tiles/barrier.png",
-            "type": "barrier",
-            "layer": "top"
-        },
-        "16-0-top": {
-            "src": "/Assets/Tiles/barrier.png",
-            "type": "barrier",
-            "layer": "top"
-        },
-        "17-0-top": {
-            "src": "/Assets/Tiles/barrier.png",
-            "type": "barrier",
-            "layer": "top"
-        },
-        "18-0-top": {
-            "src": "/Assets/Tiles/barrier.png",
-            "type": "barrier",
-            "layer": "top"
-        },
-        "19-0-top": {
-            "src": "/Assets/Tiles/barrier.png",
-            "type": "barrier",
-            "layer": "top"
-        },
-        "19-1-top": {
-            "src": "/Assets/Tiles/barrier.png",
-            "type": "barrier",
-            "layer": "top"
-        },
-        "19-2-top": {
-            "src": "/Assets/Tiles/barrier.png",
-            "type": "barrier",
-            "layer": "top"
-        },
-        "19-3-top": {
-            "src": "/Assets/Tiles/barrier.png",
-            "type": "barrier",
-            "layer": "top"
-        },
-        "19-4-top": {
-            "src": "/Assets/Tiles/barrier.png",
-            "type": "barrier",
-            "layer": "top"
-        },
-        "19-5-top": {
-            "src": "/Assets/Tiles/barrier.png",
-            "type": "barrier",
-            "layer": "top"
-        },
-        "19-6-top": {
-            "src": "/Assets/Tiles/barrier.png",
-            "type": "barrier",
-            "layer": "top"
-        },
-        "19-7-top": {
-            "src": "/Assets/Tiles/barrier.png",
-            "type": "barrier",
-            "layer": "top"
-        },
-        "19-9-top": {
-            "src": "/Assets/Tiles/barrier.png",
-            "type": "barrier",
-            "layer": "top"
-        },
-        "19-8-top": {
-            "src": "/Assets/Tiles/barrier.png",
-            "type": "barrier",
-            "layer": "top"
-        },
-        "19-11-top": {
-            "src": "/Assets/Tiles/barrier.png",
-            "type": "barrier",
-            "layer": "top"
-        },
-        "19-12-top": {
-            "src": "/Assets/Tiles/barrier.png",
-            "type": "barrier",
-            "layer": "top"
-        },
-        "19-10-top": {
-            "src": "/Assets/Tiles/barrier.png",
-            "type": "barrier",
-            "layer": "top"
-        },
-        "19-13-top": {
-            "src": "/Assets/Tiles/barrier.png",
-            "type": "barrier",
-            "layer": "top"
-        },
-        "18-13-top": {
-            "src": "/Assets/Tiles/barrier.png",
-            "type": "barrier",
-            "layer": "top"
-        },
-        "17-13-top": {
-            "src": "/Assets/Tiles/barrier.png",
-            "type": "barrier",
-            "layer": "top"
-        },
-        "16-13-top": {
-            "src": "/Assets/Tiles/barrier.png",
-            "type": "barrier",
-            "layer": "top"
-        },
-        "15-13-top": {
-            "src": "/Assets/Tiles/barrier.png",
-            "type": "barrier",
-            "layer": "top"
-        },
-        "14-13-top": {
-            "src": "/Assets/Tiles/barrier.png",
-            "type": "barrier",
-            "layer": "top"
-        },
-        "13-13-top": {
-            "src": "/Assets/Tiles/barrier.png",
-            "type": "barrier",
-            "layer": "top"
-        },
-        "12-13-top": {
-            "src": "/Assets/Tiles/barrier.png",
-            "type": "barrier",
-            "layer": "top"
-        },
-        "11-13-top": {
-            "src": "/Assets/Tiles/barrier.png",
-            "type": "barrier",
-            "layer": "top"
-        },
-        "10-13-top": {
-            "src": "/Assets/Tiles/barrier.png",
-            "type": "barrier",
-            "layer": "top"
-        },
-        "9-13-top": {
-            "src": "/Assets/Tiles/barrier.png",
-            "type": "barrier",
-            "layer": "top"
-        },
-        "7-13-top": {
-            "src": "/Assets/Tiles/barrier.png",
-            "type": "barrier",
-            "layer": "top"
-        },
-        "6-13-top": {
-            "src": "/Assets/Tiles/barrier.png",
-            "type": "barrier",
-            "layer": "top"
-        },
-        "5-13-top": {
-            "src": "/Assets/Tiles/barrier.png",
-            "type": "barrier",
-            "layer": "top"
-        },
-        "4-13-top": {
-            "src": "/Assets/Tiles/barrier.png",
-            "type": "barrier",
-            "layer": "top"
-        },
-        "8-13-top": {
-            "src": "/Assets/Tiles/barrier.png",
-            "type": "barrier",
-            "layer": "top"
-        },
-        "3-13-top": {
-            "src": "/Assets/Tiles/barrier.png",
-            "type": "barrier",
-            "layer": "top"
-        },
-        "2-13-top": {
-            "src": "/Assets/Tiles/barrier.png",
-            "type": "barrier",
-            "layer": "top"
-        },
-        "1-13-top": {
-            "src": "/Assets/Tiles/barrier.png",
-            "type": "barrier",
-            "layer": "top"
-        },
-        "0-13-top": {
-            "src": "/Assets/Tiles/barrier.png",
-            "type": "barrier",
-            "layer": "top"
-        },
-        "0-12-top": {
-            "src": "/Assets/Tiles/barrier.png",
-            "type": "barrier",
-            "layer": "top"
-        },
-        "0-10-top": {
-            "src": "/Assets/Tiles/barrier.png",
-            "type": "barrier",
-            "layer": "top"
-        },
-        "0-11-top": {
-            "src": "/Assets/Tiles/barrier.png",
-            "type": "barrier",
-            "layer": "top"
-        },
-        "0-8-top": {
-            "src": "/Assets/Tiles/barrier.png",
-            "type": "barrier",
-            "layer": "top"
-        },
-        "0-6-top": {
-            "src": "/Assets/Tiles/barrier.png",
-            "type": "barrier",
-            "layer": "top"
-        },
-        "0-5-top": {
-            "src": "/Assets/Tiles/barrier.png",
-            "type": "barrier",
-            "layer": "top"
-        },
-        "0-4-top": {
-            "src": "/Assets/Tiles/barrier.png",
-            "type": "barrier",
-            "layer": "top"
-        },
-        "0-3-top": {
-            "src": "/Assets/Tiles/barrier.png",
-            "type": "barrier",
-            "layer": "top"
-        },
-        "0-2-top": {
-            "src": "/Assets/Tiles/barrier.png",
-            "type": "barrier",
-            "layer": "top"
-        },
-        "0-1-top": {
-            "src": "/Assets/Tiles/barrier.png",
-            "type": "barrier",
-            "layer": "top"
-        },
-        "0-7-top": {
-            "src": "/Assets/Tiles/barrier.png",
-            "type": "barrier",
-            "layer": "top"
-        },
-        "0-9-top": {
-            "src": "/Assets/Tiles/barrier.png",
-            "type": "barrier",
-            "layer": "top"
-        },
-        "1-1-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "2-1-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "3-1-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "4-1-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "5-1-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "6-1-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "7-1-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "8-1-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "10-1-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "12-1-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "14-1-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "15-1-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "16-1-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "17-1-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "18-1-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "18-2-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "17-2-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "16-2-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "15-2-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "14-2-floor": {
-            "src": "/Assets/Tiles/path.png",
-            "type": "path",
-            "layer": "floor"
-        },
-        "13-2-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "12-2-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "11-2-floor": {
-            "src": "/Assets/Tiles/path.png",
-            "type": "path",
-            "layer": "floor"
-        },
-        "10-2-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "9-2-floor": {
-            "src": "/Assets/Tiles/path.png",
-            "type": "path",
-            "layer": "floor"
-        },
-        "8-2-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "6-2-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "5-2-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "4-2-floor": {
-            "src": "/Assets/Tiles/path.png",
-            "type": "path",
-            "layer": "floor"
-        },
-        "3-2-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "2-2-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "1-2-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "1-3-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "2-3-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "3-3-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "4-3-floor": {
-            "src": "/Assets/Tiles/path.png",
-            "type": "path",
-            "layer": "floor"
-        },
-        "6-3-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "8-3-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "9-3-floor": {
-            "src": "/Assets/Tiles/path.png",
-            "type": "path",
-            "layer": "floor"
-        },
-        "10-3-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "12-3-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "13-3-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "15-3-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "16-3-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "17-3-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "18-3-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "18-4-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "17-4-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "16-4-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "14-4-floor": {
-            "src": "/Assets/Tiles/path.png",
-            "type": "path",
-            "layer": "floor"
-        },
-        "12-4-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "11-4-floor": {
-            "src": "/Assets/Tiles/path.png",
-            "type": "path",
-            "layer": "floor"
-        },
-        "10-4-floor": {
-            "src": "/Assets/Tiles/path.png",
-            "type": "path",
-            "layer": "floor"
-        },
-        "8-4-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "5-4-floor": {
-            "src": "/Assets/Tiles/path.png",
-            "type": "path",
-            "layer": "floor"
-        },
-        "4-4-floor": {
-            "src": "/Assets/Tiles/path.png",
-            "type": "path",
-            "layer": "floor"
-        },
-        "3-4-floor": {
-            "src": "/Assets/Tiles/path.png",
-            "type": "path",
-            "layer": "floor"
-        },
-        "2-4-floor": {
-            "src": "/Assets/Tiles/path.png",
-            "type": "path",
-            "layer": "floor"
-        },
-        "1-4-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "1-5-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "2-5-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "4-5-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "6-5-floor": {
-            "src": "/Assets/Tiles/path.png",
-            "type": "path",
-            "layer": "floor"
-        },
-        "7-4-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "15-4-floor": {
-            "src": "/Assets/Tiles/path.png",
-            "type": "path",
-            "layer": "floor"
-        },
-        "7-2-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "7-3-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "5-3-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "5-5-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "3-5-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "1-6-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "4-6-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "6-6-floor": {
-            "src": "/Assets/Tiles/path.png",
-            "type": "path",
-            "layer": "floor"
-        },
-        "7-6-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "9-6-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "10-6-floor": {
-            "src": "/Assets/Tiles/path.png",
-            "type": "path",
-            "layer": "floor"
-        },
-        "12-6-floor": {
-            "src": "/Assets/Tiles/path.png",
-            "type": "path",
-            "layer": "floor"
-        },
-        "14-6-floor": {
-            "src": "/Assets/Tiles/path.png",
-            "type": "path",
-            "layer": "floor"
-        },
-        "15-6-floor": {
-            "src": "/Assets/Tiles/path.png",
-            "type": "path",
-            "layer": "floor"
-        },
-        "17-6-floor": {
-            "src": "/Assets/Tiles/path.png",
-            "type": "path",
-            "layer": "floor"
-        },
-        "18-6-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "18-7-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "17-7-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "16-7-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "15-7-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "14-7-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "13-7-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "12-7-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "11-7-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "10-7-floor": {
-            "src": "/Assets/Tiles/path.png",
-            "type": "path",
-            "layer": "floor"
-        },
-        "9-7-floor": {
-            "src": "/Assets/Tiles/path.png",
-            "type": "path",
-            "layer": "floor"
-        },
-        "7-7-floor": {
-            "src": "/Assets/Tiles/path.png",
-            "type": "path",
-            "layer": "floor"
-        },
-        "6-7-floor": {
-            "src": "/Assets/Tiles/path.png",
-            "type": "path",
-            "layer": "floor"
-        },
-        "5-7-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "4-7-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "3-7-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "2-7-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "1-7-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "1-8-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "1-10-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "1-11-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "1-12-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "3-12-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "5-12-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "6-12-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "8-12-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "9-12-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "11-11-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "12-12-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "13-12-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "14-12-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "16-12-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "17-12-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "18-12-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "18-11-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "18-10-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "18-9-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "18-8-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "14-8-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "12-8-floor": {
-            "src": "/Assets/Tiles/path.png",
-            "type": "path",
-            "layer": "floor"
-        },
-        "10-8-floor": {
-            "src": "/Assets/Tiles/path.png",
-            "type": "path",
-            "layer": "floor"
-        },
-        "7-8-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "4-8-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "3-8-floor": {
-            "src": "/Assets/Tiles/path.png",
-            "type": "path",
-            "layer": "floor"
-        },
-        "1-9-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "2-9-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "2-8-floor": {
-            "src": "/Assets/Tiles/path.png",
-            "type": "path",
-            "layer": "floor"
-        },
-        "2-11-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "2-12-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "2-10-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "3-10-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "3-11-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "3-9-floor": {
-            "src": "/Assets/Tiles/path.png",
-            "type": "path",
-            "layer": "floor"
-        },
-        "5-9-floor": {
-            "src": "/Assets/Tiles/path.png",
-            "type": "path",
-            "layer": "floor"
-        },
-        "4-11-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "4-12-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "5-11-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "7-11-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "7-12-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "10-12-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "11-12-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "15-12-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "16-11-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "17-11-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "15-8-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "12-10-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "13-10-floor": {
-            "src": "/Assets/Tiles/path.png",
-            "type": "path",
-            "layer": "floor"
-        },
-        "14-10-floor": {
-            "src": "/Assets/Tiles/path.png",
-            "type": "path",
-            "layer": "floor"
-        },
-        "15-10-floor": {
-            "src": "/Assets/Tiles/path.png",
-            "type": "path",
-            "layer": "floor"
-        },
-        "16-10-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "17-10-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "17-9-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "16-8-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "17-8-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "16-9-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "15-9-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "14-9-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "13-9-floor": {
-            "src": "/Assets/Tiles/path.png",
-            "type": "path",
-            "layer": "floor"
-        },
-        "13-8-floor": {
-            "src": "/Assets/Tiles/path.png",
-            "type": "path",
-            "layer": "floor"
-        },
-        "12-9-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "11-8-floor": {
-            "src": "/Assets/Tiles/path.png",
-            "type": "path",
-            "layer": "floor"
-        },
-        "11-10-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "12-11-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "13-11-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "14-11-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "15-11-floor": {
-            "src": "/Assets/Tiles/path.png",
-            "type": "path",
-            "layer": "floor"
-        },
-        "10-11-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "9-11-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "4-10-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "4-9-floor": {
-            "src": "/Assets/Tiles/path.png",
-            "type": "path",
-            "layer": "floor"
-        },
-        "5-10-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "6-11-floor": {
-            "src": "/Assets/Tiles/path.png",
-            "type": "path",
-            "layer": "floor"
-        },
-        "7-10-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "8-10-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "8-11-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "10-9-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "8-9-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "13-5-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "14-5-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "16-5-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "17-5-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "18-5-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "15-5-floor": {
-            "src": "/Assets/Tiles/path.png",
-            "type": "path",
-            "layer": "floor"
-        },
-        "16-6-floor": {
-            "src": "/Assets/Tiles/path.png",
-            "type": "path",
-            "layer": "floor"
-        },
-        "13-6-floor": {
-            "src": "/Assets/Tiles/path.png",
-            "type": "path",
-            "layer": "floor"
-        },
-        "13-4-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "14-3-floor": {
-            "src": "/Assets/Tiles/path.png",
-            "type": "path",
-            "layer": "floor"
-        },
-        "11-3-floor": {
-            "src": "/Assets/Tiles/path.png",
-            "type": "path",
-            "layer": "floor"
-        },
-        "9-1-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "11-1-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "13-1-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "12-5-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "10-5-floor": {
-            "src": "/Assets/Tiles/path.png",
-            "type": "path",
-            "layer": "floor"
-        },
-        "9-5-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "8-5-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "7-5-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "9-4-floor": {
-            "src": "/Assets/Tiles/path.png",
-            "type": "path",
-            "layer": "floor"
-        },
-        "8-6-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "8-7-floor": {
-            "src": "/Assets/Tiles/path.png",
-            "type": "path",
-            "layer": "floor"
-        },
-        "8-8-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "9-8-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "9-9-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "9-10-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "10-10-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "11-9-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "11-5-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "11-6-floor": {
-            "src": "/Assets/Tiles/path.png",
-            "type": "path",
-            "layer": "floor"
-        },
-        "5-8-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "6-8-floor": {
-            "src": "/Assets/Tiles/path.png",
-            "type": "path",
-            "layer": "floor"
-        },
-        "6-9-floor": {
-            "src": "/Assets/Tiles/path.png",
-            "type": "path",
-            "layer": "floor"
-        },
-        "6-10-floor": {
-            "src": "/Assets/Tiles/path.png",
-            "type": "path",
-            "layer": "floor"
-        },
-        "7-9-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "5-6-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "3-6-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "2-6-floor": {
-            "src": "/Assets/Tiles/grass.png",
-            "type": "grass",
-            "layer": "floor"
-        },
-        "6-4-floor": {
-            "src": "/Assets/Tiles/path.png",
-            "type": "path",
-            "layer": "floor"
-        }
+    "24-0-gameObject": {
+      "name": "barrier",
+      "type": "wall",
+      "position": { "x": 24, "y": 0 }
+    },
+    "24-1-gameObject": {
+      "name": "barrier",
+      "type": "wall",
+      "position": { "x": 24, "y": 1 }
+    },
+    "24-2-gameObject": {
+      "name": "barrier",
+      "type": "wall",
+      "position": { "x": 24, "y": 2 }
+    },
+    "24-3-gameObject": {
+      "name": "barrier",
+      "type": "wall",
+      "position": { "x": 24, "y": 3 }
+    },
+    "24-4-gameObject": {
+      "name": "barrier",
+      "type": "wall",
+      "position": { "x": 24, "y": 4 }
+    },
+    "24-5-gameObject": {
+      "name": "barrier",
+      "type": "wall",
+      "position": { "x": 24, "y": 5 }
+    },
+    "24-6-gameObject": {
+      "name": "barrier",
+      "type": "wall",
+      "position": { "x": 24, "y": 6 }
+    },
+    "24-7-gameObject": {
+      "name": "barrier",
+      "type": "wall",
+      "position": { "x": 24, "y": 7 }
+    },
+    "24-8-gameObject": {
+      "name": "barrier",
+      "type": "wall",
+      "position": { "x": 24, "y": 8 }
+    },
+    "24-9-gameObject": {
+      "name": "barrier",
+      "type": "wall",
+      "position": { "x": 24, "y": 9 }
+    },
+    "24-10-gameObject": {
+      "name": "barrier",
+      "type": "wall",
+      "position": { "x": 24, "y": 10 }
+    },
+    "24-11-gameObject": {
+      "name": "barrier",
+      "type": "wall",
+      "position": { "x": 24, "y": 11 }
+    },
+    "24-12-gameObject": {
+      "name": "barrier",
+      "type": "wall",
+      "position": { "x": 24, "y": 12 }
+    },
+    "24-13-gameObject": {
+      "name": "barrier",
+      "type": "wall",
+      "position": { "x": 24, "y": 13 }
+    },
+    "23-13-gameObject": {
+      "name": "barrier",
+      "type": "wall",
+      "position": { "x": 23, "y": 13 }
+    },
+    "22-13-gameObject": {
+      "name": "barrier",
+      "type": "wall",
+      "position": { "x": 22, "y": 13 }
+    },
+    "21-13-gameObject": {
+      "name": "barrier",
+      "type": "wall",
+      "position": { "x": 21, "y": 13 }
+    },
+    "20-13-gameObject": {
+      "name": "barrier",
+      "type": "wall",
+      "position": { "x": 20, "y": 13 }
+    },
+    "19-13-gameObject": {
+      "name": "barrier",
+      "type": "wall",
+      "position": { "x": 19, "y": 13 }
+    },
+    "18-13-gameObject": {
+      "name": "barrier",
+      "type": "wall",
+      "position": { "x": 18, "y": 13 }
+    },
+    "17-13-gameObject": {
+      "name": "barrier",
+      "type": "wall",
+      "position": { "x": 17, "y": 13 }
+    },
+    "16-13-gameObject": {
+      "name": "barrier",
+      "type": "wall",
+      "position": { "x": 16, "y": 13 }
+    },
+    "15-13-gameObject": {
+      "name": "barrier",
+      "type": "wall",
+      "position": { "x": 15, "y": 13 }
+    },
+    "14-13-gameObject": {
+      "name": "barrier",
+      "type": "wall",
+      "position": { "x": 14, "y": 13 }
+    },
+    "13-13-gameObject": {
+      "name": "barrier",
+      "type": "wall",
+      "position": { "x": 13, "y": 13 }
+    },
+    "12-13-gameObject": {
+      "name": "barrier",
+      "type": "wall",
+      "position": { "x": 12, "y": 13 }
+    },
+    "11-13-gameObject": {
+      "name": "barrier",
+      "type": "wall",
+      "position": { "x": 11, "y": 13 }
+    },
+    "10-13-gameObject": {
+      "name": "barrier",
+      "type": "wall",
+      "position": { "x": 10, "y": 13 }
+    },
+    "9-13-gameObject": {
+      "name": "barrier",
+      "type": "wall",
+      "position": { "x": 9, "y": 13 }
+    },
+    "8-13-gameObject": {
+      "name": "barrier",
+      "type": "wall",
+      "position": { "x": 8, "y": 13 }
+    },
+    "7-13-gameObject": {
+      "name": "barrier",
+      "type": "wall",
+      "position": { "x": 7, "y": 13 }
+    },
+    "6-13-gameObject": {
+      "name": "barrier",
+      "type": "wall",
+      "position": { "x": 6, "y": 13 }
+    },
+    "5-13-gameObject": {
+      "name": "barrier",
+      "type": "wall",
+      "position": { "x": 5, "y": 13 }
+    },
+    "4-13-gameObject": {
+      "name": "barrier",
+      "type": "wall",
+      "position": { "x": 4, "y": 13 }
+    },
+    "3-13-gameObject": {
+      "name": "barrier",
+      "type": "wall",
+      "position": { "x": 3, "y": 13 }
+    },
+    "2-13-gameObject": {
+      "name": "barrier",
+      "type": "wall",
+      "position": { "x": 2, "y": 13 }
+    },
+    "1-13-gameObject": {
+      "name": "barrier",
+      "type": "wall",
+      "position": { "x": 1, "y": 13 }
+    },
+    "0-13-gameObject": {
+      "name": "barrier",
+      "type": "wall",
+      "position": { "x": 0, "y": 13 }
+    },
+    "0-12-gameObject": {
+      "name": "barrier",
+      "type": "wall",
+      "position": { "x": 0, "y": 12 }
+    },
+    "0-11-gameObject": {
+      "name": "barrier",
+      "type": "wall",
+      "position": { "x": 0, "y": 11 }
+    },
+    "0-10-gameObject": {
+      "name": "barrier",
+      "type": "wall",
+      "position": { "x": 0, "y": 10 }
+    },
+    "0-9-gameObject": {
+      "name": "barrier",
+      "type": "wall",
+      "position": { "x": 0, "y": 9 }
+    },
+    "0-8-gameObject": {
+      "name": "barrier",
+      "type": "wall",
+      "position": { "x": 0, "y": 8 }
+    },
+    "0-7-gameObject": {
+      "name": "barrier",
+      "type": "wall",
+      "position": { "x": 0, "y": 7 }
+    },
+    "0-6-gameObject": {
+      "name": "barrier",
+      "type": "wall",
+      "position": { "x": 0, "y": 6 }
+    },
+    "0-5-gameObject": {
+      "name": "barrier",
+      "type": "wall",
+      "position": { "x": 0, "y": 5 }
+    },
+    "0-4-gameObject": {
+      "name": "barrier",
+      "type": "wall",
+      "position": { "x": 0, "y": 4 }
+    },
+    "0-3-gameObject": {
+      "name": "barrier",
+      "type": "wall",
+      "position": { "x": 0, "y": 3 }
+    },
+    "0-2-gameObject": {
+      "name": "barrier",
+      "type": "wall",
+      "position": { "x": 0, "y": 2 }
+    },
+    "0-1-gameObject": {
+      "name": "barrier",
+      "type": "wall",
+      "position": { "x": 0, "y": 1 }
+    },
+    "0-0-gameObject": {
+      "name": "barrier",
+      "type": "wall",
+      "position": { "x": 0, "y": 0 }
+    },
+    "1-0-gameObject": {
+      "name": "barrier",
+      "type": "wall",
+      "position": { "x": 1, "y": 0 }
+    },
+    "2-0-gameObject": {
+      "name": "barrier",
+      "type": "wall",
+      "position": { "x": 2, "y": 0 }
+    },
+    "2-2-gameObject": {
+      "name": "barrier",
+      "type": "wall",
+      "position": { "x": 2, "y": 2 }
+    },
+    "3-0-gameObject": {
+      "name": "barrier",
+      "type": "wall",
+      "position": { "x": 3, "y": 0 }
+    },
+    "4-0-gameObject": {
+      "name": "barrier",
+      "type": "wall",
+      "position": { "x": 4, "y": 0 }
+    },
+    "5-0-gameObject": {
+      "name": "barrier",
+      "type": "wall",
+      "position": { "x": 5, "y": 0 }
+    },
+    "6-0-gameObject": {
+      "name": "barrier",
+      "type": "wall",
+      "position": { "x": 6, "y": 0 }
+    },
+    "7-0-gameObject": {
+      "name": "barrier",
+      "type": "wall",
+      "position": { "x": 7, "y": 0 }
+    },
+    "8-0-gameObject": {
+      "name": "barrier",
+      "type": "wall",
+      "position": { "x": 8, "y": 0 }
+    },
+    "9-0-gameObject": {
+      "name": "barrier",
+      "type": "wall",
+      "position": { "x": 9, "y": 0 }
+    },
+    "10-0-gameObject": {
+      "name": "barrier",
+      "type": "wall",
+      "position": { "x": 10, "y": 0 }
+    },
+    "11-0-gameObject": {
+      "name": "barrier",
+      "type": "wall",
+      "position": { "x": 11, "y": 0 }
+    },
+    "12-0-gameObject": {
+      "name": "barrier",
+      "type": "wall",
+      "position": { "x": 12, "y": 0 }
+    },
+    "13-0-gameObject": {
+      "name": "barrier",
+      "type": "wall",
+      "position": { "x": 13, "y": 0 }
+    },
+    "14-0-gameObject": {
+      "name": "barrier",
+      "type": "wall",
+      "position": { "x": 14, "y": 0 }
+    },
+    "15-0-gameObject": {
+      "name": "barrier",
+      "type": "wall",
+      "position": { "x": 15, "y": 0 }
+    },
+    "16-0-gameObject": {
+      "name": "barrier",
+      "type": "wall",
+      "position": { "x": 16, "y": 0 }
+    },
+    "17-0-gameObject": {
+      "name": "barrier",
+      "type": "wall",
+      "position": { "x": 17, "y": 0 }
+    },
+    "19-0-gameObject": {
+      "name": "barrier",
+      "type": "wall",
+      "position": { "x": 19, "y": 0 }
+    },
+    "21-0-gameObject": {
+      "name": "barrier",
+      "type": "wall",
+      "position": { "x": 21, "y": 0 }
+    },
+    "22-0-gameObject": {
+      "name": "barrier",
+      "type": "wall",
+      "position": { "x": 22, "y": 0 }
+    },
+    "23-0-gameObject": {
+      "name": "barrier",
+      "type": "wall",
+      "position": { "x": 23, "y": 0 }
+    },
+    "20-0-gameObject": {
+      "name": "barrier",
+      "type": "wall",
+      "position": { "x": 20, "y": 0 }
+    },
+    "18-0-gameObject": {
+      "name": "barrier",
+      "type": "wall",
+      "position": { "x": 18, "y": 0 }
     }
+  },
+  "tiles": {
+    "1-1-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 1, "y": 1 }
+    },
+    "2-1-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 2, "y": 1 }
+    },
+    "3-1-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 3, "y": 1 }
+    },
+    "4-1-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 4, "y": 1 }
+    },
+    "5-1-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 5, "y": 1 }
+    },
+    "7-1-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 7, "y": 1 }
+    },
+    "8-1-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 8, "y": 1 }
+    },
+    "9-1-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 9, "y": 1 }
+    },
+    "10-1-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 10, "y": 1 }
+    },
+    "11-1-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 11, "y": 1 }
+    },
+    "13-1-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 13, "y": 1 }
+    },
+    "16-1-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 16, "y": 1 }
+    },
+    "18-1-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 18, "y": 1 }
+    },
+    "20-2-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 20, "y": 2 }
+    },
+    "21-2-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 21, "y": 2 }
+    },
+    "20-3-bottom": {
+      "frame": { "x": 3, "y": 1 },
+      "position": { "x": 20, "y": 3 }
+    },
+    "18-4-bottom": {
+      "frame": { "x": 3, "y": 1 },
+      "position": { "x": 18, "y": 4 }
+    },
+    "15-4-bottom": {
+      "frame": { "x": 3, "y": 1 },
+      "position": { "x": 15, "y": 4 }
+    },
+    "11-4-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 11, "y": 4 }
+    },
+    "6-3-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 6, "y": 3 }
+    },
+    "4-3-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 4, "y": 3 }
+    },
+    "7-2-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 7, "y": 2 }
+    },
+    "9-2-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 9, "y": 2 }
+    },
+    "12-2-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 12, "y": 2 }
+    },
+    "13-2-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 13, "y": 2 }
+    },
+    "14-3-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 14, "y": 3 }
+    },
+    "13-4-bottom": {
+      "frame": { "x": 3, "y": 1 },
+      "position": { "x": 13, "y": 4 }
+    },
+    "8-3-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 8, "y": 3 }
+    },
+    "12-1-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 12, "y": 1 }
+    },
+    "14-2-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 14, "y": 2 }
+    },
+    "15-3-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 15, "y": 3 }
+    },
+    "12-3-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 12, "y": 3 }
+    },
+    "9-3-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 9, "y": 3 }
+    },
+    "7-3-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 7, "y": 3 }
+    },
+    "3-0-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 3, "y": 0 }
+    },
+    "2-0-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 2, "y": 0 }
+    },
+    "1-0-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 1, "y": 0 }
+    },
+    "0-0-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 0, "y": 0 }
+    },
+    "0-1-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 0, "y": 1 }
+    },
+    "0-2-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 0, "y": 2 }
+    },
+    "0-3-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 0, "y": 3 }
+    },
+    "0-4-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 0, "y": 4 }
+    },
+    "0-5-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 0, "y": 5 }
+    },
+    "0-6-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 0, "y": 6 }
+    },
+    "0-7-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 0, "y": 7 }
+    },
+    "0-8-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 0, "y": 8 }
+    },
+    "1-9-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 1, "y": 9 }
+    },
+    "0-9-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 0, "y": 9 }
+    },
+    "0-10-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 0, "y": 10 }
+    },
+    "0-11-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 0, "y": 11 }
+    },
+    "0-12-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 0, "y": 12 }
+    },
+    "1-12-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 1, "y": 12 }
+    },
+    "2-12-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 2, "y": 12 }
+    },
+    "3-12-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 3, "y": 12 }
+    },
+    "3-11-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 3, "y": 11 }
+    },
+    "4-11-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 4, "y": 11 }
+    },
+    "1-11-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 1, "y": 11 }
+    },
+    "1-10-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 1, "y": 10 }
+    },
+    "1-8-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 1, "y": 8 }
+    },
+    "1-7-bottom": {
+      "frame": { "x": 0, "y": 2 },
+      "position": { "x": 1, "y": 7 }
+    },
+    "1-6-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 1, "y": 6 }
+    },
+    "1-5-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 1, "y": 5 }
+    },
+    "1-4-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 1, "y": 4 }
+    },
+    "1-3-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 1, "y": 3 }
+    },
+    "1-2-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 1, "y": 2 }
+    },
+    "2-8-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 2, "y": 8 }
+    },
+    "2-7-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 2, "y": 7 }
+    },
+    "2-6-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 2, "y": 6 }
+    },
+    "3-5-bottom": {
+      "frame": { "x": 3, "y": 1 },
+      "position": { "x": 3, "y": 5 }
+    },
+    "3-4-bottom": {
+      "frame": { "x": 3, "y": 1 },
+      "position": { "x": 3, "y": 4 }
+    },
+    "2-5-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 2, "y": 5 }
+    },
+    "2-9-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 2, "y": 9 }
+    },
+    "2-10-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 2, "y": 10 }
+    },
+    "2-11-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 2, "y": 11 }
+    },
+    "4-12-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 4, "y": 12 }
+    },
+    "5-12-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 5, "y": 12 }
+    },
+    "6-12-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 6, "y": 12 }
+    },
+    "7-12-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 7, "y": 12 }
+    },
+    "8-12-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 8, "y": 12 }
+    },
+    "9-12-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 9, "y": 12 }
+    },
+    "10-12-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 10, "y": 12 }
+    },
+    "11-12-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 11, "y": 12 }
+    },
+    "12-12-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 12, "y": 12 }
+    },
+    "13-12-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 13, "y": 12 }
+    },
+    "14-12-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 14, "y": 12 }
+    },
+    "15-12-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 15, "y": 12 }
+    },
+    "16-12-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 16, "y": 12 }
+    },
+    "17-12-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 17, "y": 12 }
+    },
+    "18-12-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 18, "y": 12 }
+    },
+    "19-12-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 19, "y": 12 }
+    },
+    "20-12-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 20, "y": 12 }
+    },
+    "20-11-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 20, "y": 11 }
+    },
+    "21-11-bottom": {
+      "frame": { "x": 3, "y": 1 },
+      "position": { "x": 21, "y": 11 }
+    },
+    "21-10-bottom": {
+      "frame": { "x": 3, "y": 1 },
+      "position": { "x": 21, "y": 10 }
+    },
+    "21-9-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 21, "y": 9 }
+    },
+    "21-8-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 21, "y": 8 }
+    },
+    "21-12-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 21, "y": 12 }
+    },
+    "21-7-bottom": {
+      "frame": { "x": 3, "y": 1 },
+      "position": { "x": 21, "y": 7 }
+    },
+    "21-6-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 21, "y": 6 }
+    },
+    "21-5-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 21, "y": 5 }
+    },
+    "21-4-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 21, "y": 4 }
+    },
+    "21-3-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 21, "y": 3 }
+    },
+    "21-1-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 21, "y": 1 }
+    },
+    "22-0-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 22, "y": 0 }
+    },
+    "22-1-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 22, "y": 1 }
+    },
+    "22-2-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 22, "y": 2 }
+    },
+    "23-3-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 23, "y": 3 }
+    },
+    "23-4-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 23, "y": 4 }
+    },
+    "23-5-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 23, "y": 5 }
+    },
+    "23-6-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 23, "y": 6 }
+    },
+    "23-7-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 23, "y": 7 }
+    },
+    "23-8-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 23, "y": 8 }
+    },
+    "2-4-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 2, "y": 4 }
+    },
+    "2-3-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 2, "y": 3 }
+    },
+    "2-2-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 2, "y": 2 }
+    },
+    "3-2-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 3, "y": 2 }
+    },
+    "5-2-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 5, "y": 2 }
+    },
+    "6-2-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 6, "y": 2 }
+    },
+    "6-1-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 6, "y": 1 }
+    },
+    "4-2-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 4, "y": 2 }
+    },
+    "3-3-bottom": {
+      "frame": { "x": 3, "y": 1 },
+      "position": { "x": 3, "y": 3 }
+    },
+    "5-4-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 5, "y": 4 }
+    },
+    "6-4-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 6, "y": 4 }
+    },
+    "4-4-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 4, "y": 4 }
+    },
+    "7-4-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 7, "y": 4 }
+    },
+    "8-4-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 8, "y": 4 }
+    },
+    "7-5-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 7, "y": 5 }
+    },
+    "7-6-bottom": {
+      "frame": { "x": 3, "y": 1 },
+      "position": { "x": 7, "y": 6 }
+    },
+    "7-7-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 7, "y": 7 }
+    },
+    "6-9-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 6, "y": 9 }
+    },
+    "5-10-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 5, "y": 10 }
+    },
+    "5-11-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 5, "y": 11 }
+    },
+    "6-11-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 6, "y": 11 }
+    },
+    "8-11-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 8, "y": 11 }
+    },
+    "9-11-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 9, "y": 11 }
+    },
+    "11-11-bottom": {
+      "frame": { "x": 3, "y": 1 },
+      "position": { "x": 11, "y": 11 }
+    },
+    "12-11-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 12, "y": 11 }
+    },
+    "14-11-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 14, "y": 11 }
+    },
+    "15-11-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 15, "y": 11 }
+    },
+    "16-11-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 16, "y": 11 }
+    },
+    "17-11-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 17, "y": 11 }
+    },
+    "18-11-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 18, "y": 11 }
+    },
+    "19-11-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 19, "y": 11 }
+    },
+    "22-11-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 22, "y": 11 }
+    },
+    "22-12-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 22, "y": 12 }
+    },
+    "23-12-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 23, "y": 12 }
+    },
+    "23-11-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 23, "y": 11 }
+    },
+    "23-10-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 23, "y": 10 }
+    },
+    "23-9-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 23, "y": 9 }
+    },
+    "22-6-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 22, "y": 6 }
+    },
+    "23-2-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 23, "y": 2 }
+    },
+    "23-1-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 23, "y": 1 }
+    },
+    "20-1-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 20, "y": 1 }
+    },
+    "19-1-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 19, "y": 1 }
+    },
+    "18-2-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 18, "y": 2 }
+    },
+    "17-2-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 17, "y": 2 }
+    },
+    "16-2-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 16, "y": 2 }
+    },
+    "15-2-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 15, "y": 2 }
+    },
+    "14-1-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 14, "y": 1 }
+    },
+    "15-1-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 15, "y": 1 }
+    },
+    "17-1-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 17, "y": 1 }
+    },
+    "22-3-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 22, "y": 3 }
+    },
+    "22-4-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 22, "y": 4 }
+    },
+    "22-5-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 22, "y": 5 }
+    },
+    "22-7-bottom": {
+      "frame": { "x": 3, "y": 1 },
+      "position": { "x": 22, "y": 7 }
+    },
+    "22-8-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 22, "y": 8 }
+    },
+    "22-9-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 22, "y": 9 }
+    },
+    "22-10-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 22, "y": 10 }
+    },
+    "20-10-bottom": {
+      "frame": { "x": 3, "y": 1 },
+      "position": { "x": 20, "y": 10 }
+    },
+    "19-10-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 19, "y": 10 }
+    },
+    "18-10-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 18, "y": 10 }
+    },
+    "17-10-bottom": {
+      "frame": { "x": 0, "y": 2 },
+      "position": { "x": 17, "y": 10 }
+    },
+    "15-10-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 15, "y": 10 }
+    },
+    "14-10-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 14, "y": 10 }
+    },
+    "13-10-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 13, "y": 10 }
+    },
+    "12-10-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 12, "y": 10 }
+    },
+    "11-10-bottom": {
+      "frame": { "x": 3, "y": 1 },
+      "position": { "x": 11, "y": 10 }
+    },
+    "10-10-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 10, "y": 10 }
+    },
+    "9-10-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 9, "y": 10 }
+    },
+    "8-10-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 8, "y": 10 }
+    },
+    "7-10-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 7, "y": 10 }
+    },
+    "6-10-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 6, "y": 10 }
+    },
+    "4-10-bottom": {
+      "frame": { "x": 3, "y": 1 },
+      "position": { "x": 4, "y": 10 }
+    },
+    "4-9-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 4, "y": 9 }
+    },
+    "4-8-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 4, "y": 8 }
+    },
+    "4-7-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 4, "y": 7 }
+    },
+    "4-6-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 4, "y": 6 }
+    },
+    "5-6-bottom": {
+      "frame": { "x": 3, "y": 1 },
+      "position": { "x": 5, "y": 6 }
+    },
+    "4-5-bottom": {
+      "frame": { "x": 3, "y": 1 },
+      "position": { "x": 4, "y": 5 }
+    },
+    "3-10-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 3, "y": 10 }
+    },
+    "3-9-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 3, "y": 9 }
+    },
+    "3-8-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 3, "y": 8 }
+    },
+    "3-7-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 3, "y": 7 }
+    },
+    "3-6-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 3, "y": 6 }
+    },
+    "5-3-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 5, "y": 3 }
+    },
+    "5-5-bottom": {
+      "frame": { "x": 3, "y": 1 },
+      "position": { "x": 5, "y": 5 }
+    },
+    "6-5-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 6, "y": 5 }
+    },
+    "6-6-bottom": {
+      "frame": { "x": 3, "y": 1 },
+      "position": { "x": 6, "y": 6 }
+    },
+    "5-7-bottom": {
+      "frame": { "x": 3, "y": 1 },
+      "position": { "x": 5, "y": 7 }
+    },
+    "5-8-bottom": {
+      "frame": { "x": 3, "y": 1 },
+      "position": { "x": 5, "y": 8 }
+    },
+    "5-9-bottom": {
+      "frame": { "x": 3, "y": 1 },
+      "position": { "x": 5, "y": 9 }
+    },
+    "6-8-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 6, "y": 8 }
+    },
+    "7-8-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 7, "y": 8 }
+    },
+    "7-9-bottom": {
+      "frame": { "x": 0, "y": 2 },
+      "position": { "x": 7, "y": 9 }
+    },
+    "7-11-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 7, "y": 11 }
+    },
+    "10-11-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 10, "y": 11 }
+    },
+    "13-11-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 13, "y": 11 }
+    },
+    "19-9-bottom": {
+      "frame": { "x": 3, "y": 1 },
+      "position": { "x": 19, "y": 9 }
+    },
+    "19-8-bottom": {
+      "frame": { "x": 3, "y": 1 },
+      "position": { "x": 19, "y": 8 }
+    },
+    "20-8-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 20, "y": 8 }
+    },
+    "20-9-bottom": {
+      "frame": { "x": 3, "y": 1 },
+      "position": { "x": 20, "y": 9 }
+    },
+    "20-7-bottom": {
+      "frame": { "x": 3, "y": 1 },
+      "position": { "x": 20, "y": 7 }
+    },
+    "20-6-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 20, "y": 6 }
+    },
+    "19-5-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 19, "y": 5 }
+    },
+    "19-4-bottom": {
+      "frame": { "x": 3, "y": 1 },
+      "position": { "x": 19, "y": 4 }
+    },
+    "19-3-bottom": {
+      "frame": { "x": 3, "y": 1 },
+      "position": { "x": 19, "y": 3 }
+    },
+    "19-2-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 19, "y": 2 }
+    },
+    "11-2-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 11, "y": 2 }
+    },
+    "10-2-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 10, "y": 2 }
+    },
+    "8-2-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 8, "y": 2 }
+    },
+    "6-7-bottom": {
+      "frame": { "x": 3, "y": 1 },
+      "position": { "x": 6, "y": 7 }
+    },
+    "8-8-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 8, "y": 8 }
+    },
+    "8-9-bottom": {
+      "frame": { "x": 0, "y": 2 },
+      "position": { "x": 8, "y": 9 }
+    },
+    "9-9-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 9, "y": 9 }
+    },
+    "10-9-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 10, "y": 9 }
+    },
+    "11-9-bottom": {
+      "frame": { "x": 3, "y": 1 },
+      "position": { "x": 11, "y": 9 }
+    },
+    "12-9-bottom": {
+      "frame": { "x": 3, "y": 1 },
+      "position": { "x": 12, "y": 9 }
+    },
+    "16-10-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 16, "y": 10 }
+    },
+    "18-9-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 18, "y": 9 }
+    },
+    "18-8-bottom": {
+      "frame": { "x": 3, "y": 1 },
+      "position": { "x": 18, "y": 8 }
+    },
+    "19-7-bottom": {
+      "frame": { "x": 3, "y": 1 },
+      "position": { "x": 19, "y": 7 }
+    },
+    "19-6-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 19, "y": 6 }
+    },
+    "20-5-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 20, "y": 5 }
+    },
+    "20-4-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 20, "y": 4 }
+    },
+    "17-3-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 17, "y": 3 }
+    },
+    "16-3-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 16, "y": 3 }
+    },
+    "13-3-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 13, "y": 3 }
+    },
+    "11-3-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 11, "y": 3 }
+    },
+    "10-3-bottom": {
+      "frame": { "x": 0, "y": 2 },
+      "position": { "x": 10, "y": 3 }
+    },
+    "12-4-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 12, "y": 4 }
+    },
+    "16-4-bottom": {
+      "frame": { "x": 3, "y": 1 },
+      "position": { "x": 16, "y": 4 }
+    },
+    "17-4-bottom": {
+      "frame": { "x": 3, "y": 1 },
+      "position": { "x": 17, "y": 4 }
+    },
+    "18-3-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 18, "y": 3 }
+    },
+    "18-5-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 18, "y": 5 }
+    },
+    "17-5-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 17, "y": 5 }
+    },
+    "16-5-bottom": {
+      "frame": { "x": 3, "y": 1 },
+      "position": { "x": 16, "y": 5 }
+    },
+    "15-5-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 15, "y": 5 }
+    },
+    "14-5-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 14, "y": 5 }
+    },
+    "13-5-bottom": {
+      "frame": { "x": 3, "y": 1 },
+      "position": { "x": 13, "y": 5 }
+    },
+    "12-5-bottom": {
+      "frame": { "x": 3, "y": 1 },
+      "position": { "x": 12, "y": 5 }
+    },
+    "11-5-bottom": {
+      "frame": { "x": 3, "y": 1 },
+      "position": { "x": 11, "y": 5 }
+    },
+    "10-5-bottom": {
+      "frame": { "x": 3, "y": 1 },
+      "position": { "x": 10, "y": 5 }
+    },
+    "9-5-bottom": {
+      "frame": { "x": 3, "y": 1 },
+      "position": { "x": 9, "y": 5 }
+    },
+    "8-5-bottom": {
+      "frame": { "x": 3, "y": 1 },
+      "position": { "x": 8, "y": 5 }
+    },
+    "9-4-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 9, "y": 4 }
+    },
+    "10-4-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 10, "y": 4 }
+    },
+    "14-4-bottom": {
+      "frame": { "x": 3, "y": 1 },
+      "position": { "x": 14, "y": 4 }
+    },
+    "18-6-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 18, "y": 6 }
+    },
+    "17-6-bottom": {
+      "frame": { "x": 3, "y": 1 },
+      "position": { "x": 17, "y": 6 }
+    },
+    "16-6-bottom": {
+      "frame": { "x": 3, "y": 1 },
+      "position": { "x": 16, "y": 6 }
+    },
+    "15-6-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 15, "y": 6 }
+    },
+    "14-6-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 14, "y": 6 }
+    },
+    "13-6-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 13, "y": 6 }
+    },
+    "12-6-bottom": {
+      "frame": { "x": 3, "y": 1 },
+      "position": { "x": 12, "y": 6 }
+    },
+    "11-6-bottom": {
+      "frame": { "x": 3, "y": 1 },
+      "position": { "x": 11, "y": 6 }
+    },
+    "10-6-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 10, "y": 6 }
+    },
+    "9-6-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 9, "y": 6 }
+    },
+    "8-7-bottom": {
+      "frame": { "x": 3, "y": 1 },
+      "position": { "x": 8, "y": 7 }
+    },
+    "9-7-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 9, "y": 7 }
+    },
+    "8-6-bottom": {
+      "frame": { "x": 3, "y": 1 },
+      "position": { "x": 8, "y": 6 }
+    },
+    "10-7-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 10, "y": 7 }
+    },
+    "11-7-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 11, "y": 7 }
+    },
+    "12-7-bottom": {
+      "frame": { "x": 3, "y": 1 },
+      "position": { "x": 12, "y": 7 }
+    },
+    "13-7-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 13, "y": 7 }
+    },
+    "14-7-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 14, "y": 7 }
+    },
+    "15-7-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 15, "y": 7 }
+    },
+    "16-7-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 16, "y": 7 }
+    },
+    "17-7-bottom": {
+      "frame": { "x": 3, "y": 1 },
+      "position": { "x": 17, "y": 7 }
+    },
+    "18-7-bottom": {
+      "frame": { "x": 3, "y": 1 },
+      "position": { "x": 18, "y": 7 }
+    },
+    "16-8-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 16, "y": 8 }
+    },
+    "14-8-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 14, "y": 8 }
+    },
+    "13-8-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 13, "y": 8 }
+    },
+    "10-8-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 10, "y": 8 }
+    },
+    "9-8-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 9, "y": 8 }
+    },
+    "11-8-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 11, "y": 8 }
+    },
+    "12-8-bottom": {
+      "frame": { "x": 3, "y": 1 },
+      "position": { "x": 12, "y": 8 }
+    },
+    "15-8-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 15, "y": 8 }
+    },
+    "17-8-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 17, "y": 8 }
+    },
+    "17-9-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 17, "y": 9 }
+    },
+    "16-9-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 16, "y": 9 }
+    },
+    "15-9-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 15, "y": 9 }
+    },
+    "14-9-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 14, "y": 9 }
+    },
+    "13-9-bottom": {
+      "frame": { "x": 3, "y": 4 },
+      "position": { "x": 13, "y": 9 }
+    }
+  }
 }
